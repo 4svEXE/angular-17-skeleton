@@ -1,5 +1,7 @@
 import { AuthenticationService } from './core/services/authentication.service';
 import { Component } from '@angular/core';
+import { switchMap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-skeleton';
 
-  constructor(private authService: AuthenticationService) {}
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
   testUser = {
     name: 'Jimm Helpert',
@@ -18,12 +23,26 @@ export class AppComponent {
   };
 
   onSubmit() {
+    this.authService.registerAndLogin(this.testUser).subscribe((userId) => {
+      console.log('userId', userId);
+
+      // this.router.navigate(['user/' + userId]);
+    });
+  }
+
+  onLogin() {
+    this.authService;
     this.authService
-      .registerAndLogin(this.testUser)
+      .login(this.testUser)
+      .pipe(switchMap(() => this.authService.getUserId()))
       .subscribe((userId) => {
         console.log('userId', userId);
-
-        // this.router.navigate(['user/' + userId]);
+        this.router.navigate(['user/' + userId]);
       });
+  }
+
+  onLogout(){
+    this.authService.logOut();
+    this.router.navigate(['']);
   }
 }
