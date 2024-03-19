@@ -1,9 +1,12 @@
 <router-outlet></router-outlet>
 
-<div class="flex bg-slate-400">
-  sdas
-</div>
+<div class="flex bg-slate-400">sdas</div>
 
 <button class="p-4 m-1 bg-blue-500" (click)="onSubmit()">register</button>
 <button class="p-4 m-1 bg-blue-500" (click)="onLogin()">onLogin</button>
 <button class="p-4 m-1 bg-blue-500" (click)="onLogout()">logout</button>
+
+<div
+  [innerHTML]="safeSvgCodes['arrow']"
+  class="p-3"
+></div>

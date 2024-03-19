@@ -1,7 +1,13 @@
-import { AuthenticationService } from './core/services/authentication.service';
 import { Component } from '@angular/core';
+
+import { AuthenticationService } from './core/services/authentication.service';
+
 import { switchMap } from 'rxjs';
 import { Router } from '@angular/router';
+
+import { SafeHtml } from '@angular/platform-browser';
+import { SvgService } from './core/services/svg.service';
+
 
 @Component({
   selector: 'app-root',
@@ -10,11 +16,17 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-skeleton';
+  safeSvgCodes: { [key: string]: SafeHtml } = {};
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private svgService: SvgService
   ) {}
+
+  ngOnInit(): void {
+    this.safeSvgCodes = this.svgService.getSafeSvgCodes();
+  }
 
   testUser = {
     name: 'Jimm Helpert',
@@ -26,7 +38,7 @@ export class AppComponent {
     this.authService.registerAndLogin(this.testUser).subscribe((userId) => {
       console.log('userId', userId);
 
-      // this.router.navigate(['user/' + userId]);
+      this.router.navigate(['user/' + userId]);
     });
   }
 
