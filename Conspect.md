@@ -23,6 +23,8 @@
     ng g component views/shared/header
 	
 	ng g service services/servName
+
+  yarn add @auth0/angular-jwt
     
 ## TO START APP
     cd ./ang-start
@@ -54,3 +56,12 @@ ng g c pages/home --skip-tests
 ng g c shared/components/main-button --skip-tests
 
 ng g m pages
+
+
+
+
+//  core/interceptors
+//  core/services
+//  core/guards
+//  core/interfaces
+//  core/variables
