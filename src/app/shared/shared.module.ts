@@ -7,14 +7,19 @@ import { MainButtonComponent } from './components/main-button/main-button.compon
 import { InputComponent } from './components/input/input.component';
 import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
 import { SelectComponent } from './components/select/select.component';
+import { CommonModule } from '@angular/common';
 
 const contenders = [MainButtonComponent, InputComponent, SelectComponent];
 
-const modules = [ReactiveFormsModule, BrowserModule, AppRoutingModule, FormsModule];
+const modules = [
+  ReactiveFormsModule,
+  FormsModule,
+  CommonModule
+];
 
 @NgModule({
   declarations: [contenders, ValidationErrorsComponent],
   imports: [modules],
   exports: [modules, contenders],
 })
-export class SharedModule { }
+export class SharedModule {}

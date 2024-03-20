@@ -57,7 +57,8 @@ ng g directive core/directives/control-value-accessor --skip-tests
 
 ng g m pages
 
-
+ng g module pages/auth/auth
+ng g c pages/auth/register
 
 
 //  core/interceptors

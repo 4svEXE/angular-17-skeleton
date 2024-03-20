@@ -4,11 +4,11 @@
     [type]="inputType"
     [id]="inputId"
     [formControl]="control"
-    [class.hasError]="control.errors"
+    [class.hasError]="control.errors && control.touched"
     [placeholder]="paceholder"
   />
 
-  <app-validation-errors
+  <app-validation-errors *ngIf="control.touched"
     [customErrorMessages]="customErrorMessages"
     [errors]="control.errors"
   ></app-validation-errors>

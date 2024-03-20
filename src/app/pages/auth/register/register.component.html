@@ -1,0 +1,47 @@
+<form [formGroup]="formGroup">
+  <div class="flex flex-col">
+    <h1>Регістрація</h1>
+
+    <div class="flex justify-center m-4">
+      <div class="flex w-[300px]">
+        <app-input
+          type="text"
+          label="Hello"
+          inputId="name"
+          paceholder="world"
+          formControlName="name"
+          [customErrorMessages]="errorMessages"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-center m-4">
+      <div class="flex w-[300px]">
+        <app-input
+          type="email"
+          label="email"
+          inputId="email"
+          paceholder="email"
+          formControlName="email"
+          [customErrorMessages]="errorMessages"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-center m-4">
+      <div class="flex w-[300px]">
+        <app-input
+          type="password"
+          label="password"
+          inputId="password"
+          paceholder="password"
+          formControlName="password"
+          [customErrorMessages]="errorMessages"
+        />
+      </div>
+    </div>
+
+    <button (click)="onSubmit()">регістрація</button>
+
+  </div>
+</form>

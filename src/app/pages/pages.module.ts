@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../app-routing.module';
 
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { PagesRoutingModule } from './pages-routing.module';
 
 const contenders = [HomeComponent];
 
-const modules = [BrowserModule, AppRoutingModule, SharedModule];
+const modules = [
+  SharedModule,
+  PagesRoutingModule,
+];
 
 @NgModule({
   declarations: [contenders],

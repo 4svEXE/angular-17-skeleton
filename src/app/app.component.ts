@@ -34,13 +34,13 @@ export class AppComponent {
     password: 'wtf12345',
   };
 
-  onSubmit() {
-    this.authService.registerAndLogin(this.testUser).subscribe((userId) => {
-      console.log('userId', userId);
+  // onSubmit() {
+  //   this.authService.registerAndLogin(this.testUser).subscribe((userId) => {
+  //     console.log('userId', userId);
 
-      this.router.navigate(['user/' + userId]);
-    });
-  }
+  //     this.router.navigate(['user/' + userId]);
+  //   });
+  // }
 
   onLogin() {
     this.authService;
