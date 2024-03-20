@@ -5,6 +5,7 @@
     <div class="flex justify-center m-4">
       <div class="flex w-[300px]">
         <app-input
+          class="w-full"
           type="text"
           label="Hello"
           inputId="name"
@@ -18,6 +19,7 @@
     <div class="flex justify-center m-4">
       <div class="flex w-[300px]">
         <app-input
+          class="w-full"
           type="email"
           label="email"
           inputId="email"
@@ -31,6 +33,7 @@
     <div class="flex justify-center m-4">
       <div class="flex w-[300px]">
         <app-input
+          class="w-full"
           type="password"
           label="password"
           inputId="password"
@@ -41,7 +44,13 @@
       </div>
     </div>
 
-    <button (click)="onSubmit()">регістрація</button>
-
+    <div class="flex w-full justify-center">
+      <app-button
+        [label]="'Регістрація'"
+        [additionalClasses]="'primary my-4 w-full'"
+        (buttonClick)="onSubmit()"
+        [isDisabled]="formGroup.invalid"
+      ></app-button>
+    </div>
   </div>
 </form>

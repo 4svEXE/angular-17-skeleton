@@ -1,1 +1,8 @@
-<p class="bg-slate-400">main-button works!</p>
+<button
+  [ngClass]="buttonClasses"
+  (click)="onClick()"
+  [attr.disabled]="isDisabled"
+>
+  <img *ngIf="imageUrl" [src]="imageUrl" alt="Icon" class="button-icon" />
+  <p [innerHTML]="label"></p>
+</button>
