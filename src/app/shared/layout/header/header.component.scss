@@ -1,0 +1,19 @@
+header{
+  .logo{
+    fill: red;
+  }
+
+  nav{
+    a{
+      padding: 8px;
+      border: 1px solid black;
+
+      cursor: pointer;
+      user-select: none;
+
+      &.active{
+        background-color: bisque;
+      }
+    }
+  }
+}
