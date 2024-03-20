@@ -1,3 +1,17 @@
 <p>home works!</p>
 
 <app-main-button></app-main-button>
+
+<form [formGroup]="formGroup">
+  <div class="flex justify-center m-4">
+    <div class="flex w-[300px]">
+      <app-input
+        type="text"
+        label="Hello"
+        paceholder="world"
+        formControlName="name"
+        [customErrorMessages]="errorMessages"
+      />
+    </div>
+  </div>
+</form>

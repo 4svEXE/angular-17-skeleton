@@ -45,16 +45,15 @@ angular-cli-ghpages --dir=dist/okey-post
 
 ng g component views/shared/main-button --skip-tests
 ng g component pages/home --skip-tests
-ng g component views/pages/home/firstScreen --skip-tests
-ng g component views/shared/secondary-button --skip-tests
 
-ng g component pages/home --skip-tests
-ng g component pages/home/components/first-banner --skip-tests
-ng g component pages/home/components/recomendet --skip-tests
 
 ng g c pages/home --skip-tests
 ng g c shared/components/main-button --skip-tests
 ng g c shared/components/input --skip-tests
+ng g c shared/components/validation-errors --skip-tests
+ng g c shared/components/select --skip-tests
+
+ng g directive core/directives/control-value-accessor --skip-tests
 
 ng g m pages
 

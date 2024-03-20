@@ -5,13 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MainButtonComponent } from './components/main-button/main-button.component';
 import { InputComponent } from './components/input/input.component';
+import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
 
-const contenders = [MainButtonComponent];
+const contenders = [MainButtonComponent, InputComponent];
 
-const modules = [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule];
+const modules = [ReactiveFormsModule, BrowserModule, AppRoutingModule, FormsModule];
 
 @NgModule({
-  declarations: [contenders, InputComponent],
+  declarations: [contenders, ValidationErrorsComponent],
   imports: [modules],
   exports: [modules, contenders],
 })

@@ -1,1 +1,15 @@
-<p>input works!</p>
+<div class="dvs-form-control" *ngIf="control">
+  <label for="inputId" *ngIf="label">{{ label }}</label>
+  <input
+    [type]="inputTyle"
+    [id]="inputId"
+    [formControl]="control"
+    [class.hasError]="control.errors"
+    [placeholder]="paceholder"
+  />
+
+  <app-validation-errors
+    [customErrorMessages]="customErrorMessages"
+    [errors]="control.errors"
+  ></app-validation-errors>
+</div>

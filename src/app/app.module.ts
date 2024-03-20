@@ -9,9 +9,10 @@ import { PagesModule } from './pages/pages.module';
 
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { ControlValueAccessor } from './core/directives/control-value-accessor.directive';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ControlValueAccessor],
   imports: [BrowserModule, AppRoutingModule,HttpClientModule, SharedModule, PagesModule],
   providers: [
     JwtHelperService,
