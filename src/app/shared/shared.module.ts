@@ -4,13 +4,14 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MainButtonComponent } from './components/main-button/main-button.component';
+import { InputComponent } from './components/input/input.component';
 
 const contenders = [MainButtonComponent];
 
 const modules = [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule];
 
 @NgModule({
-  declarations: [contenders],
+  declarations: [contenders, InputComponent],
   imports: [modules],
   exports: [modules, contenders],
 })

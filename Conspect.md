@@ -54,6 +54,7 @@ ng g component pages/home/components/recomendet --skip-tests
 
 ng g c pages/home --skip-tests
 ng g c shared/components/main-button --skip-tests
+ng g c shared/components/input --skip-tests
 
 ng g m pages
 
