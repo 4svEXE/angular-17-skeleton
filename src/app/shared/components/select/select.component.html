@@ -1,0 +1,14 @@
+<div class="dvs-form-control" *ngIf="control && options">
+  <label [for]="selectId" *ngIf="label">{{ label }}</label>
+
+  <select [formControl]="control" [id]="selectId">
+    <option *ngFor="let option of options" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+
+  <app-validation-errors
+    [customErrorMessages]="customErrorMessages"
+    [errors]="control.errors"
+  ></app-validation-errors>
+</div>

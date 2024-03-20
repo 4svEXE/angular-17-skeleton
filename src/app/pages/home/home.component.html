@@ -3,15 +3,34 @@
 <app-main-button></app-main-button>
 
 <form [formGroup]="formGroup">
-  <div class="flex justify-center m-4">
-    <div class="flex w-[300px]">
-      <app-input
-        type="text"
-        label="Hello"
-        paceholder="world"
-        formControlName="name"
-        [customErrorMessages]="errorMessages"
-      />
+  <div class="flex flex-col">
+    <div class="flex justify-center m-4">
+      <div class="flex w-[300px]">
+        <app-input
+          type="text"
+          label="Hello"
+          inputId="name"
+          paceholder="world"
+          formControlName="name"
+          [customErrorMessages]="errorMessages"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-center m-4">
+      <div class="flex w-[300px]">
+        <app-select
+          selectId="gender"
+          label="select your gender"
+          [options]="options"
+          formControlName="gender"
+          [customErrorMessages]="errorMessages"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-center m-4">
+      {{ formGroup.value | json }}
     </div>
   </div>
 </form>

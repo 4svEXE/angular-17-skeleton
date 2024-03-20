@@ -1,0 +1,19 @@
+.dvs-form-control {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: 600;
+    padding: 8px 0;
+  }
+
+  select {
+    width: 100%;
+    padding: 8px 4px;
+    border: 1px solid #665959;
+
+    &.hasError {
+      border: 2px solid red;
+    }
+  }
+}

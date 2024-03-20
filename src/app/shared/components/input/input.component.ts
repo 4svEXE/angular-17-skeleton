@@ -11,14 +11,14 @@ type InputType = 'text' | 'number' | 'email' | 'password';
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => InputComponent),
-      multi: true
+      multi: true,
     },
   ],
 })
 export class InputComponent<T> extends ControlValueAccessor<T> {
-  @Input() label = '';
-  @Input() inputTyle = '';
+  @Input() inputId = '';
+  @Input() inputType: InputType = 'text';
   @Input() paceholder = '';
-  @Input() inputId: InputType = 'text';
-  @Input() customErrorMessages: Record<string, string> = {}
+  @Input() label = '';
+  @Input() customErrorMessages: Record<string, string> = {};
 }

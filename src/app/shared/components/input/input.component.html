@@ -1,7 +1,7 @@
 <div class="dvs-form-control" *ngIf="control">
-  <label for="inputId" *ngIf="label">{{ label }}</label>
+  <label [for]="inputId" *ngIf="label">{{ label }}</label>
   <input
-    [type]="inputTyle"
+    [type]="inputType"
     [id]="inputId"
     [formControl]="control"
     [class.hasError]="control.errors"

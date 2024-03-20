@@ -6,8 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainButtonComponent } from './components/main-button/main-button.component';
 import { InputComponent } from './components/input/input.component';
 import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
+import { SelectComponent } from './components/select/select.component';
 
-const contenders = [MainButtonComponent, InputComponent];
+const contenders = [MainButtonComponent, InputComponent, SelectComponent];
 
 const modules = [ReactiveFormsModule, BrowserModule, AppRoutingModule, FormsModule];
 
