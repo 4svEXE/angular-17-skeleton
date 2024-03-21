@@ -3,12 +3,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import { RegisterComponent } from './register/register.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { LoginComponent } from './login/login.component';
 
-const contenders = [RegisterComponent];
-const modules = [
-  SharedModule,
-  AuthRoutingModule
-];
+const contenders = [RegisterComponent, LoginComponent];
+const modules = [SharedModule, AuthRoutingModule];
 
 @NgModule({
   declarations: [contenders],

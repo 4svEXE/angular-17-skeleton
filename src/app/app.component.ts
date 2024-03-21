@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { AuthenticationService } from './core/services/authentication.service';
 
-import { switchMap } from 'rxjs';
+
 import { Router } from '@angular/router';
 
 import { SafeHtml } from '@angular/platform-browser';
@@ -42,16 +42,16 @@ export class AppComponent {
   //   });
   // }
 
-  onLogin() {
-    this.authService;
-    this.authService
-      .login(this.testUser)
-      .pipe(switchMap(() => this.authService.getUserId()))
-      .subscribe((userId) => {
-        console.log('userId', userId);
-        this.router.navigate(['user/' + userId]);
-      });
-  }
+  // onLogin() {
+  //   this.authService;
+  //   this.authService
+  //     .login(this.testUser)
+  //     .pipe(switchMap(() => this.authService.getUserId()))
+  //     .subscribe((userId) => {
+  //       console.log('userId', userId);
+  //       this.router.navigate(['user/' + userId]);
+  //     });
+  // }
 
   onLogout(){
     this.authService.logOut();

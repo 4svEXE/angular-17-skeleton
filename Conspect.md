@@ -62,6 +62,9 @@ ng g c pages/auth/register
 ng g c pages/auth/login --skip-tests
 ng g c shared/layout/header --skip-tests
 
+ng g c pages/user-profile --skip-tests
+ng g module pages/user-profile
+
 
 //  core/interceptors
 //  core/services

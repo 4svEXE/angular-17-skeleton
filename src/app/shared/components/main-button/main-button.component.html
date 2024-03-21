@@ -1,7 +1,7 @@
 <button
   [ngClass]="buttonClasses"
   (click)="onClick()"
-  [attr.disabled]="isDisabled"
+  [attr.disabled]="isDisabled ? true : null"
 >
   <img *ngIf="imageUrl" [src]="imageUrl" alt="Icon" class="button-icon" />
   <p [innerHTML]="label"></p>

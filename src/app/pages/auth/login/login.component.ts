@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SafeHtml } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { AuthenticationService, LoginForm } from 'src/app/core/services/authentication.service';
 import { SvgService } from 'src/app/core/services/svg.service';
+import { switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class RegisterComponent {
+
+export class LoginComponent {
   title = 'register';
   safeSvgCodes: { [key: string]: SafeHtml } = {};
 
@@ -22,11 +24,6 @@ export class RegisterComponent {
   };
 
   formGroup = new FormGroup({
-    name: new FormControl('', [
-      Validators.required,
-      Validators.minLength(8),
-      Validators.maxLength(28),
-    ]),
     email: new FormControl('', [
       Validators.required,
       Validators.email,
@@ -53,10 +50,19 @@ export class RegisterComponent {
   onSubmit() {
     if (!this.formGroup.valid) return;
 
-    this.authService.registerAndLogin(this.formGroup.value).subscribe((userId) => {
-      console.log('userId', userId);
+    const loginForm: LoginForm ={
+      email: this.formGroup.get('email')?.value || '',
+      password: this.formGroup.get('password')?.value || '',
+    };
 
-      this.router.navigate(['user/' + userId]);
-    });
+    this.authService;
+    this.authService
+      .login(loginForm)
+      .pipe(switchMap(() => this.authService.getUserId()))
+      .subscribe((userId) => {
+        console.log('userId', userId);
+        this.router.navigate(['user/' + userId]);
+      });
   }
 }
+
