@@ -20,7 +20,7 @@ import { AuthModule } from './pages/auth/auth.module';
     HttpClientModule,
     SharedModule,
     PagesModule,
-    AuthModule
+    AuthModule,
   ],
   providers: [
     JwtHelperService,

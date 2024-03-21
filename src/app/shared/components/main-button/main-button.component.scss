@@ -19,6 +19,8 @@
 
   min-width: 223px;
 
+  fill: #fafafa;
+
   &:hover {
     background: #5c8c7c;
   }
@@ -37,20 +39,28 @@
   &.secondary {
     border: 1px solid #84b4a4;
     color: #84b4a4;
+    fill: #84b4a4;
     background: none;
 
     &:hover {
       color: #fafafa;
+      fill: #fafafa;
     }
   }
 
   &.inverted {
     color: #1e1e1e;
+    fill: #1e1e1e;
     background: none;
 
     &:hover {
       background: #5c8c7c;
       color: #fafafa;
+      fill: #fafafa;
     }
+  }
+
+  .button-icon{
+    margin-right: 4px;
   }
 }

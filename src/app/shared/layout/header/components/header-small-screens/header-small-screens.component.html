@@ -1,0 +1,67 @@
+<header class="flex flex-col">
+  <div
+    class="logo-container sticky flex items-center m-auto"
+    routerLink="/"
+    [class.mb-28]="isFixed"
+  >
+    <div [innerHTML]="safeSvgCodes['logo']"></div>
+  </div>
+
+  <div
+    class="bottom-container grid grid-cols-12 gap-4 pb-5"
+    [class.fixed]="isFixed"
+  >
+    <div class="search col-span-10 sm:col-span-11 md:col-span-8">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Я шукаю"
+        class="bordered-button px-4"
+      />
+      <img
+        src="{{ imgPath + 'search_white.svg' }}"
+        alt="search"
+        class="search-button"
+      />
+    </div>
+
+    <div
+      class="contacts bordered-button px-1 md:px-4 flex col-span-2 sm:col-span-1 md:col-span-4"
+    >
+      <div
+        class="flex items-center justify-center w-full"
+        (click)="isActiveContactsToggle()"
+      >
+        <img
+          src="{{ imgPath + 'forum.svg' }}"
+          alt="icon"
+          class="mr-0 md:mr-2"
+        />
+        <span class="hidden md:block">Графік та зв’язок</span>
+      </div>
+
+      <div
+        class="contacts-box flex flex-col right-0 mr-0 md:mr-[15%]"
+        [class.active]="isActiveContacts"
+      >
+        <div class="flex">
+          <img
+            src="{{ imgPath + 'phone_contacts.svg' }}"
+            alt="icon"
+            class="mr-2"
+          />
+          <span>097 328 58 54</span>
+        </div>
+        <a class="mb-3">Замовити дзвінок</a>
+
+        <div class="flex alighn-center">
+          <img src="{{ imgPath + 'whatsApp.svg' }}" alt="icon" class="mr-2" />
+          <span>0973285854</span>
+        </div>
+
+        <span><strong>з 09:00 до 17:00</strong></span>
+      </div>
+    </div>
+  </div>
+</header>

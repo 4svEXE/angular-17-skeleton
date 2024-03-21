@@ -1,18 +1,147 @@
-header{
-  .logo{
-    fill: red;
-  }
+header {
+  position: relative;
+  top: 0px;
 
-  nav{
-    a{
-      padding: 8px;
-      border: 1px solid black;
+  .top-section {
+    background-color: #fff;
 
+    position: fixed;
+    top: 0;
+
+    padding: 20px 0;
+    z-index: 10;
+
+    .logo {
+      width: 212px;
+      height: 36px;
+      fill: #5c8c7c;
+    }
+
+    nav {
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #1e1e1e;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &.red {
+          color: #f1655b;
+        }
+      }
+    }
+
+    .button-header {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .profile-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #84b4a4;
+      color: #fafafa;
+      letter-spacing: 0px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info {
+      width: 19px;
+      height: 19px;
+      border: 2px solid #84b4a4;
+      background: #84b4a4;
+      border-radius: 100%;
+      position: absolute;
+      right: -10px;
+      top: 5px;
+      font-size: 10px;
+      font-weight: bold;
+      color: #fff;
       cursor: pointer;
       user-select: none;
+    }
+  }
 
-      &.active{
-        background-color: bisque;
+  .bottom-section {
+    border-top: 1px solid #5c8c7c;
+    z-index: 5;
+    margin-top: 76px;
+
+    .button {
+      border-radius: 4px;
+      background: #84b4a4;
+      cursor: pointer;
+      transition: 0.3s;
+      opacity: 0.9;
+      margin: 10px, 24px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        text-align: center;
+        color: #fafafa;
+      }
+    }
+
+    .search-form {
+      width: 480px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .button-header {
+        position: absolute;
+        right: 0;
+        transform: translate(-100%);
+        margin-left: -12px;
+        cursor: pointer;
+
+        fill: #5c8c7c;
+      }
+    }
+
+    .contacts {
+      .phone-number {
+        width: 100%;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        span {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 27px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+      }
+
+      a {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+        text-align: left;
+        transition: 0.3s;
+
+        &:hover {
+          color: #f1655b;
+        }
       }
     }
   }

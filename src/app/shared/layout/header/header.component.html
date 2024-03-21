@@ -1,11 +1,95 @@
-<header class="container m-auto flex items-center justify-between">
-  <div routerLink="/" class="logo mr-4">
-    <div [innerHTML]="safeSvgCodes['logo']"></div>
-  </div>
+<div class="container m-auto hidden lg:block">
+  <header class="w-full flex items-center flex-col justify-between">
+    <div class="top-section w-full">
+      <div class="container m-auto flex items-center justify-between">
+        <div routerLink="/" class="logo mr-4">
+          <div [innerHTML]="safeSvgCodes['logo']"></div>
+        </div>
 
-  <nav class="flex">
-    <a routerLink="/" routerLinkActive="active" >home</a>
-    <a routerLink="auth/register" routerLinkActive="active" >register</a>
-    <a routerLink="auth/login" routerLinkActive="active" >login</a>
-  </nav>
-</header>
+        <nav>
+          <a
+            *ngFor="let link of links"
+            href="#"
+            routerLink="{{ link.path }}"
+            [routerLinkActive]="['active']"
+            [class.red]="link.path === '/sales'"
+            class="xl:mx-4 mx-3"
+          >
+            {{ link.title }}
+          </a>
+        </nav>
+
+        <div class="controls flex">
+          <div class="flex ml-3 xl:ml-5 relative">
+            <div [innerHTML]="safeSvgCodes['cart']" class="button-header"></div>
+            <div class="info flex items-center justify-center">2</div>
+          </div>
+
+          <div class="flex ml-3 xl:ml-5 relative">
+            <div [innerHTML]="safeSvgCodes['like']" class="button-header"></div>
+            <div class="info flex items-center justify-center">99</div>
+          </div>
+
+          <!-- if unautorised -->
+          <div *ngIf="!username" class="flex ml-3 xl:ml-5 relative">
+            <div
+              [innerHTML]="safeSvgCodes['profile']"
+              class="button-header"
+              (click)="ngxSmartModalService.getModal('mainModal').open()"
+            ></div>
+          </div>
+
+          <!-- if autorised user -->
+          <div *ngIf="username" class="flex ml-3 xl:ml-5 relative">
+            <a class="profile-icon" routerLink="/login" alt="cart">{{
+              username
+            }}</a>
+            <!-- <div class="info flex items-center justify-center">21</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bottom-section py-4 xl:py-10 w-full flex items-center flex-col justify-between lg:flex-row"
+    >
+      <app-button
+        [safeSvg]="safeSvgCodes['catalog']"
+        [label]="'Каталог товарів'"
+        [additionalClasses]="'primary px-4 py-3'"
+        [routerLink]="'/'"
+      ></app-button>
+
+      <form [formGroup]="formGroup" class="search-form flex px-4 py-3">
+        <app-input
+          class="w-full"
+          inputType="text"
+          inputId="search"
+          paceholder="search"
+          formControlName="search"
+        />
+
+        <div [innerHTML]="safeSvgCodes['search']" class="button-header"></div>
+      </form>
+
+      <div class="contacts flex flex-col">
+        <div class="phone-number flex justify-between">
+          <div [innerHTML]="safeSvgCodes['phone']" class="button-header"></div>
+          <span> 097 328 58 54 </span>
+        </div>
+        <a href="">Замовити дзвінок</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- small screens -->
+<div class="w-full m-auto block lg:hidden">
+  <app-header-small-screens></app-header-small-screens>
+
+  <app-mobile-tab-bar></app-mobile-tab-bar>
+</div>
+
+<!-- <div class="test">a</div> -->
+
+<!-- <app-modal></app-modal> -->

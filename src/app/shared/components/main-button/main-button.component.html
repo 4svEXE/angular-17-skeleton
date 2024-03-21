@@ -4,5 +4,6 @@
   [attr.disabled]="isDisabled ? true : null"
 >
   <img *ngIf="imageUrl" [src]="imageUrl" alt="Icon" class="button-icon" />
+  <div *ngIf="safeSvg" [innerHTML]="safeSvg" class="button-icon"></div>
   <p [innerHTML]="label"></p>
 </button>

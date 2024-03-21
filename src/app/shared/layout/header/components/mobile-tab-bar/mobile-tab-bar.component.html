@@ -1,0 +1,62 @@
+<div class="tab-bar">
+  <a class="tab-bar-button active" routerLink="/">
+    <div [innerHTML]="safeSvgCodes['home']" class="tab-bar-icon"></div>
+    <span>Головна</span>
+  </a>
+
+  <a class="tab-bar-button">
+    <div [innerHTML]="safeSvgCodes['catalog']" class="tab-bar-icon"></div>
+    <span>Каталог</span>
+  </a>
+
+  <a class="tab-bar-button">
+    <div [innerHTML]="safeSvgCodes['basket']" class="tab-bar-icon"></div>
+    <span>Кошик</span>
+  </a>
+
+  <a class="tab-bar-button">
+    <div [innerHTML]="safeSvgCodes['heart']" class="tab-bar-icon"></div>
+    <span>Обране</span>
+  </a>
+
+  <a class="tab-bar-button" (click)="toggleSubBar()">
+    <div [innerHTML]="safeSvgCodes['more']" class="tab-bar-icon"></div>
+    <span>Більше</span>
+  </a>
+</div>
+
+<div class="tab-bar-sub-menu m-a" [class.closed]="isClosedSubBar">
+  <div class="sub-menu">
+    <div
+      class="close-button"
+      [class.slideUp]="!isClosedSubBar"
+      (click)="toggleSubBar()"
+    >
+      <div class="vector"></div>
+    </div>
+
+    <app-button
+      [label]="'Каталог товарів'"
+      [additionalClasses]="'primary px-4 py-3 mb-2'"
+      [routerLink]="'/'"
+    ></app-button>
+
+    <app-button
+      [label]="'Каталог товарів'"
+      [additionalClasses]="'inverted px-4 py-3 mb-2'"
+      [routerLink]="'/'"
+    ></app-button>
+
+    <app-button
+      [label]="'Каталог товарів'"
+      [additionalClasses]="'inverted px-4 py-3 mb-2'"
+      [routerLink]="'/'"
+    ></app-button>
+
+    <app-button
+      [label]="'Каталог товарів'"
+      [additionalClasses]="'inverted px-4 py-3'"
+      [routerLink]="'/'"
+    ></app-button>
+  </div>
+</div>

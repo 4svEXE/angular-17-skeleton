@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-button',
@@ -11,6 +12,7 @@ export class MainButtonComponent {
   @Input() additionalClasses: string = '';
   @Input() isDisabled: boolean = false;
   @Input() imageUrl: string | undefined;
+  @Input() safeSvg: SafeHtml | undefined;
 
   get buttonClasses(): string{
     return 'button ' + this.additionalClasses;

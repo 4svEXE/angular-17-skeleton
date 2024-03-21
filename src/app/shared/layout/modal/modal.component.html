@@ -1,0 +1,44 @@
+<ngx-smart-modal
+  #mainModal
+  identifier="mainModal"
+  [hideDelay]="0"
+  [autostart]="false"
+  [closable]="false"
+>
+  <div class="modal-container">
+    <div class="modal flex flex-col">
+      <div class="close-modal">
+        <div class="loader">
+          <div class="line"></div>
+          <div class="body">
+            <img
+              class="close-icon"
+              src="{{ imgPath + 'close.svg' }}"
+              (click)="mainModal.close()"
+              alt="close modal"
+            />
+          </div>
+        </div>
+
+        <img
+          class="close-icon hidden"
+          src="{{ imgPath + 'close.svg' }}"
+          (click)="mainModal.close()"
+          alt="close modal"
+        />
+      </div>
+
+      <div *ngIf="modalState === 'register'">
+
+      </div>
+
+      <div *ngIf="modalState === 'thanks'">
+        <!-- <app-thanks></app-thanks> -->
+      </div>
+
+      <div *ngIf="modalState === 'login'">
+        <!-- <app-login></app-login> -->
+      </div>
+    </div>
+  </div>
+</ngx-smart-modal>
