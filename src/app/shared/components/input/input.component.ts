@@ -17,7 +17,7 @@ type InputType = 'text' | 'number' | 'email' | 'password';
 })
 export class InputComponent<T> extends ControlValueAccessor<T> {
   @Input() inputId = '';
-  @Input() inputType: InputType = 'text';
+  @Input() inputType!: InputType;
   @Input() paceholder = '';
   @Input() label = '';
   @Input() customErrorMessages: Record<string, string> = {};

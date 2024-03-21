@@ -1,6 +1,7 @@
 import { OptionInterface } from './../../shared/components/select/select.component';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomErrorMessages } from 'src/app/core/variables/customFormsErrors';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  errorMessages = { required: "Це поле обов'язкове!!!!!" };
+  errorMessages = CustomErrorMessages;
 
   options: OptionInterface[] = [
     {

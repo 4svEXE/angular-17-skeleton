@@ -16,42 +16,13 @@ import { SvgService } from './core/services/svg.service';
 })
 export class AppComponent {
   title = 'angular-skeleton';
-  safeSvgCodes: { [key: string]: SafeHtml } = {};
+  safeSvgCodes: { [key: string]: SafeHtml } = this.svgService.getSafeSvgCodes();
 
   constructor(
     private authService: AuthenticationService,
     private router: Router,
     private svgService: SvgService
   ) {}
-
-  ngOnInit(): void {
-    this.safeSvgCodes = this.svgService.getSafeSvgCodes();
-  }
-
-  testUser = {
-    name: 'Jimm Helpert',
-    email: 'solGoodman@gamail.com',
-    password: 'wtf12345',
-  };
-
-  // onSubmit() {
-  //   this.authService.registerAndLogin(this.testUser).subscribe((userId) => {
-  //     console.log('userId', userId);
-
-  //     this.router.navigate(['user/' + userId]);
-  //   });
-  // }
-
-  // onLogin() {
-  //   this.authService;
-  //   this.authService
-  //     .login(this.testUser)
-  //     .pipe(switchMap(() => this.authService.getUserId()))
-  //     .subscribe((userId) => {
-  //       console.log('userId', userId);
-  //       this.router.navigate(['user/' + userId]);
-  //     });
-  // }
 
   onLogout(){
     this.authService.logOut();
