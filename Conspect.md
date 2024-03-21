@@ -63,6 +63,8 @@ ng g c pages/auth/login --skip-tests
 ng g c shared/layout/header --skip-tests
 ng g c shared/layout/modal --skip-tests
 
+ng g c shared/layout/nav-sub-menu --skip-tests
+
 ng g c pages/user-profile --skip-tests
 ng g module pages/user-profile
 

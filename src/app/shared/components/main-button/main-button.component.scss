@@ -25,15 +25,16 @@
     background: #5c8c7c;
   }
 
-  &:disabled {
-    opacity: 0.7;
-    pointer-events: none;
-    background: #d1cece;
-    cursor: not-allowed;
-  }
+  &.inverted {
+    color: #1e1e1e;
+    fill: #1e1e1e;
+    background: none;
 
-  &.primary {
-    background: #84b4a4;
+    &:hover {
+      background: #5c8c7c;
+      color: #fafafa;
+      fill: #fafafa;
+    }
   }
 
   &.secondary {
@@ -48,19 +49,20 @@
     }
   }
 
-  &.inverted {
-    color: #1e1e1e;
-    fill: #1e1e1e;
-    background: none;
-
-    &:hover {
-      background: #5c8c7c;
-      color: #fafafa;
-      fill: #fafafa;
-    }
+  &.primary {
+    background: #84b4a4;
+    color: #fafafa;
+    fill: #fafafa;
   }
 
-  .button-icon{
+  &:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    background: #d1cece;
+    cursor: not-allowed;
+  }
+
+  .button-icon {
     margin-right: 4px;
   }
 }

@@ -1,1 +1,11 @@
-<p>search works!</p>
+<form [formGroup]="formGroup" class="search-form flex px-4 py-3">
+  <app-input
+    class="w-full"
+    inputType="text"
+    inputId="search"
+    paceholder="Я шукаю..."
+    formControlName="search"
+  />
+
+  <div [innerHTML]="safeSvgCodes['search']" class="button-header"></div>
+</form>

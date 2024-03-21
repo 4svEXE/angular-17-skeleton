@@ -1,0 +1,17 @@
+.search-form {
+  max-width: 480px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .button-header {
+    position: absolute;
+    right: 0;
+    transform: translate(-100%);
+    margin-left: -12px;
+    cursor: pointer;
+
+    fill: #5c8c7c;
+  }
+}

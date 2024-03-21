@@ -41,7 +41,7 @@
 
           <!-- if autorised user -->
           <div *ngIf="username" class="flex ml-3 xl:ml-5 relative">
-            <a class="profile-icon" routerLink="/login" alt="cart">{{
+            <a class="profile-icon" routerLink="/user/:id" alt="cart">{{
               username
             }}</a>
             <!-- <div class="info flex items-center justify-center">21</div> -->
@@ -60,17 +60,7 @@
         [routerLink]="'/'"
       ></app-button>
 
-      <form [formGroup]="formGroup" class="search-form flex px-4 py-3">
-        <app-input
-          class="w-full"
-          inputType="text"
-          inputId="search"
-          paceholder="search"
-          formControlName="search"
-        />
-
-        <div [innerHTML]="safeSvgCodes['search']" class="button-header"></div>
-      </form>
+      <app-search class="w-[400px]"></app-search>
 
       <div class="contacts flex flex-col">
         <div class="phone-number flex justify-between">
