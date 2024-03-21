@@ -7,7 +7,7 @@
   left: 0;
   align-items: center;
   justify-content: space-around;
-  background-color: #84B4A4;
+  background-color: #84b4a4;
   z-index: 100;
 
   .tab-bar-button {
@@ -19,7 +19,7 @@
     cursor: pointer;
 
     .tab-bar-icon {
-      transition: .3s;
+      transition: 0.3s;
 
       svg {
         fill: white;
@@ -29,96 +29,11 @@
 
   .active {
     .tab-bar-icon {
-      fill: #5C8C7C;
+      fill: #5c8c7c;
     }
 
     span {
-      color: #5C8C7C;
+      color: #5c8c7c;
     }
-  }
-}
-
-.tab-bar-sub-menu {
-  width: 100%;
-  position: fixed;
-  transition: .3s;
-  bottom: 0;
-  z-index: 100;
-
-  .sub-menu {
-    position: relative;
-
-    background-color: #fafafa;
-    padding: 20px;
-
-    .close-button {
-      position: absolute;
-      top: -70px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 60px;
-      background-color: #fafafa;
-      border-radius: 50%;
-      padding: 22px;
-      cursor: pointer;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &:hover {
-        background-color: #e0e0e0;
-      }
-
-      .vector {
-        position: relative;
-        width: 2px;
-        height: 16px;
-        background-color: #1e1e1e;
-        transform: rotate(45deg);
-
-        &:after {
-          content: '';
-          position: absolute;
-          width: 3px;
-          height: 16px;
-          background-color: #1e1e1e;
-          transform: rotate(90deg);
-        }
-      }
-    }
-
-  }
-}
-
-.closed {
-  bottom: -100%;
-
-  .close-button {
-    animation: slideDown;
-  }
-}
-
-.slideUp {
-  animation: slideUp 0.7s ease-out 0.1s;
-}
-
-@keyframes slideUp {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  40% {
-    transform: translateX(-50%) translateY(-20px);
-  }
-
-  60% {
-    transform: translateX(-50%) translateY(-10px);
   }
 }

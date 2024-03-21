@@ -13,6 +13,7 @@ import { ModalComponent } from './layout/modal/modal.component';
 import { HeaderSmallScreensComponent } from './layout/header/components/header-small-screens/header-small-screens.component';
 import { MobileTabBarComponent } from './layout/header/components/mobile-tab-bar/mobile-tab-bar.component';
 import { SearchComponent } from './layout/header/components/search/search.component';
+import { NavSubMenuComponent } from './layout/nav-sub-menu/nav-sub-menu.component';
 
 const contenders = [
   MainButtonComponent,
@@ -22,6 +23,7 @@ const contenders = [
   HeaderComponent,
   HeaderSmallScreensComponent,
   MobileTabBarComponent,
+  NavSubMenuComponent
 ];
 
 const modules = [

@@ -1,21 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
 import { SvgService } from 'src/app/core/services/svg.service';
 import { HeaderLinks, LinkInterface } from 'src/app/core/variables/header';
 
 @Component({
-  selector: 'app-mobile-tab-bar',
-  templateUrl: './mobile-tab-bar.component.html',
-  styleUrls: ['./mobile-tab-bar.component.scss'],
+  selector: 'app-nav-sub-menu',
+  templateUrl: './nav-sub-menu.component.html',
+  styleUrls: ['./nav-sub-menu.component.scss']
 })
-export class MobileTabBarComponent {
-  links: LinkInterface[] = HeaderLinks;
+export class NavSubMenuComponent {
+  @Input() links: LinkInterface[] = HeaderLinks;
+  @Input() isClosed: boolean = true;
+
+
   safeSvgCodes: { [key: string]: SafeHtml } = this.svgService.getSafeSvgCodes();
-  isClosedSubBar: boolean = true;
+
 
   constructor(private svgService: SvgService) {}
 
   toggleSubBar() {
-    return this.isClosedSubBar = !this.isClosedSubBar;
+    this.isClosed = !this.isClosed;
   }
 }

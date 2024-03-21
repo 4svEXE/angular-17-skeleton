@@ -25,39 +25,8 @@
   </a>
 </div>
 
-<div class="tab-bar-sub-menu m-a" [class.closed]="isClosedSubBar">
-  <div class="sub-menu">
-    <div
-      class="close-button"
-      [class.slideUp]="!isClosedSubBar"
-      (click)="toggleSubBar()"
-    >
-      <div class="vector"></div>
-    </div>
-
-    <app-button
-      [label]="'Каталог товарів'"
-      [additionalClasses]="'inverted px-4 py-3 mb-2 w-full'"
-      [routerLink]="'/'"
-      routerLinkActive="primary"
-    ></app-button>
-
-    <app-button
-      [label]="'Каталог товарів'"
-      [additionalClasses]="' primary inverted px-4 py-3 mb-2'"
-      [routerLink]="'/'"
-    ></app-button>
-
-    <app-button
-      [label]="'Каталог товарів'"
-      [additionalClasses]="'inverted px-4 py-3 mb-2'"
-      [routerLink]="'/'"
-    ></app-button>
-
-    <app-button
-      [label]="'Каталог товарів'"
-      [additionalClasses]="'inverted px-4 py-3'"
-      [routerLink]="'/'"
-    ></app-button>
-  </div>
-</div>
+<app-nav-sub-menu
+  [links]="links"
+  [isClosed]="isClosedSubBar"
+  (click)="toggleSubBar()"
+></app-nav-sub-menu>

@@ -1,0 +1,22 @@
+<div class="tab-bar-sub-menu m-a" [class.closed]="isClosed">
+  <div class="sub-menu">
+    <div
+      class="close-button"
+      [class.slideUp]="!isClosed"
+      (click)="toggleSubBar()"
+    >
+      <div class="vector"></div>
+    </div>
+
+    <ng-container *ngFor="let item of links">
+      <app-button
+        [label]="item.title"
+        additionalClasses="inverted px-4 py-3 mb-2 w-full"
+        [routerLink]="item.path"
+        [routerLinkActive]="'primary'"
+      ></app-button>
+    </ng-container>
+  </div>
+</div>
+
+<div class="dark-bg" [class.active]="!isClosed"></div>
