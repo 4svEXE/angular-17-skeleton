@@ -1,42 +1,69 @@
-<form [formGroup]="formGroup">
-  <div class="flex flex-col">
-    <h1>Вхід</h1>
+<div class="flex items-center w-full px-3 md:px-0">
+  <div class="flex flex-col md:w-[440px] w-full m-auto">
+    <h2 class="modal-title">Вхід</h2>
 
-    <div class="flex justify-center m-4">
-      <div class="flex w-[300px]">
-        <app-input
-          class="w-full"
-          inputType="email"
-          label="email"
-          inputId="email"
-          paceholder="email"
-          formControlName="email"
-          [customErrorMessages]="errorMessages"
-        />
-      </div>
+    <div class="flex box">
+      <span>Ще немає акаунта?</span>
+      <a routerLink="/auth/register">Зарєєструватись</a>
     </div>
 
-    <div class="flex justify-center m-4">
-      <div class="flex w-[300px]">
-        <app-input
-          class="w-full"
-          inputType="password"
-          label="password"
-          inputId="password"
-          paceholder="password"
-          formControlName="password"
-          [customErrorMessages]="errorMessages"
-        />
+    <form [formGroup]="formGroup">
+      <div class="flex flex-col">
+        <div class="flex justify-center my-4">
+          <div class="flex w-full">
+            <app-input
+              class="w-full"
+              inputType="email"
+              label="email"
+              inputId="email"
+              paceholder="email"
+              formControlName="email"
+              [customErrorMessages]="errorMessages"
+            />
+          </div>
+        </div>
+
+        <div class="flex justify-center my-4">
+          <div class="flex w-full">
+            <app-input
+              class="w-full"
+              inputType="password"
+              label="password"
+              inputId="password"
+              paceholder="password"
+              formControlName="password"
+              [customErrorMessages]="errorMessages"
+            />
+          </div>
+        </div>
+
+        <div class="flex w-full justify-center">
+          <app-button
+            [label]="'Вхід'"
+            [additionalClasses]="'primary my-4 md:w-[440px] w-full'"
+            (buttonClick)="onSubmit()"
+            [isDisabled]="formGroup.invalid"
+          ></app-button>
+        </div>
       </div>
+    </form>
+
+    <div class="line-container mb-4">
+      <hr />
+      <span>Вхід через</span>
+      <hr />
     </div>
 
-    <div class="flex w-full justify-center">
-      <app-button
-        [label]="'Регістрація'"
-        [additionalClasses]="'primary my-4 w-full'"
-        (buttonClick)="onSubmit()"
-        [isDisabled]="formGroup.invalid"
-      ></app-button>
+    <div class="flex justify-between">
+      <a class="social-button px-4 py-3 w-[45%]">
+        <div [innerHTML]="safeSvgCodes['facebook']" class="img"></div>
+        Facebook
+      </a>
+
+      <a class="social-button px-4 py-3 w-[49%]">
+        <div [innerHTML]="safeSvgCodes['google']" class="img"></div>
+        Google
+      </a>
     </div>
   </div>
-</form>
+</div>

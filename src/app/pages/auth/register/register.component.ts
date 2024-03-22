@@ -4,22 +4,18 @@ import { SafeHtml } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { SvgService } from 'src/app/core/services/svg.service';
+import { CustomErrorMessages } from 'src/app/core/variables/customFormsErrors';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  styleUrls: ['./register.component.scss', '../auth.styles.scss'],
 })
 export class RegisterComponent {
   title = 'register';
   safeSvgCodes: { [key: string]: SafeHtml } = {};
 
-  errorMessages = {
-    required: "Це поле обов'язкове.",
-    minlength: "Мінімальна довжина 8 символів.",
-    maxlength: "Максимальна довжина 28 символів.",
-    email: "Це поле має бути заповнено у форматі example@email.com.",
-  };
+  errorMessages = CustomErrorMessages;
 
   formGroup = new FormGroup({
     name: new FormControl('', [
@@ -53,10 +49,12 @@ export class RegisterComponent {
   onSubmit() {
     if (!this.formGroup.valid) return;
 
-    this.authService.registerAndLogin(this.formGroup.value).subscribe((userId) => {
-      console.log('userId', userId);
+    this.authService
+      .registerAndLogin(this.formGroup.value)
+      .subscribe((userId) => {
+        console.log('userId', userId);
 
-      this.router.navigate(['user/' + userId]);
-    });
+        this.router.navigate(['user/' + userId]);
+      });
   }
 }

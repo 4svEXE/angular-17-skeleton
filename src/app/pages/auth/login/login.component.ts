@@ -5,23 +5,19 @@ import { Router } from '@angular/router';
 import { AuthenticationService, LoginForm } from 'src/app/core/services/authentication.service';
 import { SvgService } from 'src/app/core/services/svg.service';
 import { switchMap } from 'rxjs';
+import { CustomErrorMessages } from 'src/app/core/variables/customFormsErrors';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss', '../auth.styles.scss']
 })
 
 export class LoginComponent {
   title = 'register';
   safeSvgCodes: { [key: string]: SafeHtml } = {};
 
-  errorMessages = {
-    required: "Це поле обов'язкове.",
-    minlength: "Мінімальна довжина 8 символів.",
-    maxlength: "Максимальна довжина 28 символів.",
-    email: "Це поле має бути заповнено у форматі example@email.com.",
-  };
+  errorMessages = CustomErrorMessages;
 
   formGroup = new FormGroup({
     email: new FormControl('', [

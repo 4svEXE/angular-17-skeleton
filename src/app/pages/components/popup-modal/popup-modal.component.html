@@ -1,0 +1,42 @@
+<ngx-smart-modal
+  #popupModal
+  identifier="popupModal"
+  [hideDelay]="0"
+  [autostart]="false"
+  [closable]="false"
+>
+  <div class="modal-container">
+    <div class="modal flex flex-col">
+      <div class="close-modal">
+        <!-- <div class="loader">
+          <div class="line"></div>
+          <div class="body">
+            <div
+              [innerHTML]="safeSvgCodes['close']"
+              class="close-icon"
+              (click)="popupModal.close()"
+            ></div>
+          </div>
+        </div> -->
+
+        <div
+          [innerHTML]="safeSvgCodes['close']"
+          class="close-icon"
+          (click)="popupModal.close()"
+        ></div>
+      </div>
+
+      <div *ngIf="modalState === 'register'">
+        <app-register></app-register>
+      </div>
+
+      <div *ngIf="modalState === 'thanks'">
+        <!-- <app-thanks></app-thanks> -->
+      </div>
+
+      <div *ngIf="modalState === 'login'">
+        <app-login></app-login>
+      </div>
+    </div>
+  </div>
+</ngx-smart-modal>
