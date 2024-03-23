@@ -8,12 +8,11 @@
       <div class="vector"></div>
     </div>
 
-    <ng-container *ngFor="let item of links">
+    <ng-container *ngFor="let link of links">
       <app-button
-        [label]="item.title"
+        [label]="link.title"
         additionalClasses="inverted px-4 py-3 mb-2 w-full"
-        [routerLink]="item.path"
-        [routerLinkActive]="'primary'"
+        [routerLink]="link.path"
       ></app-button>
     </ng-container>
   </div>

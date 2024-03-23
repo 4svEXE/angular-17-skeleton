@@ -2,6 +2,7 @@
   [ngClass]="buttonClasses"
   (click)="onClick()"
   [attr.disabled]="isDisabled ? true : null"
+  routerLinkActive="active"
 >
   <img *ngIf="imageUrl" [src]="imageUrl" alt="Icon" class="button-icon" />
   <div *ngIf="safeSvg" [innerHTML]="safeSvg" class="button-icon"></div>

@@ -1,6 +1,4 @@
-import { NavSubMenuComponent } from './../../shared/layout/nav-sub-menu/nav-sub-menu.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { InfoRoutingModule } from './info-routing.module';
 
 import { DeliveryAndPaymentsComponent } from './components/delivery-and-payments/delivery-and-payments.component';

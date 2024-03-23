@@ -9,7 +9,6 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { UserAgreementComponent } from './components/user-agreement/user-agreement.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { StoreReviewsComponent } from './components/store-reviews/store-reviews.component';
-import { InfoNavBarComponent } from './components/info-nav-bar/info-nav-bar.component';
 
 const routes: Routes = [
   {

@@ -12,14 +12,14 @@ export class InfoComponent {
   isClosedSubBar: boolean = true;
 
   links: LinkInterface[] = [
-    { title: 'Каталог', path: 'catalog-info' },
-    { title: 'Доставка та оплата', path: 'delivery-and-payments' },
-    { title: 'Обмін та повернення', path: 'exchange-and-returns' },
-    { title: 'Про нас', path: 'about-us' },
-    { title: 'Контакти', path: 'contacts' },
-    { title: 'Угода користувача', path: 'user-agreement' },
-    { title: 'Питання та відповіді', path: 'faq' },
-    { title: 'Відгуки про магазин', path: 'store-reviews' }
+    { title: 'Каталог', path: '/info/catalog-info' },
+    { title: 'Доставка та оплата', path: '/info/delivery-and-payments' },
+    { title: 'Обмін та повернення', path: '/info/exchange-and-returns' },
+    { title: 'Про нас', path: '/info/about-us' },
+    { title: 'Контакти', path: '/info/contacts' },
+    { title: 'Угода користувача', path: '/info/user-agreement' },
+    { title: 'Питання та відповіді', path: '/info/faq' },
+    { title: 'Відгуки про магазин', path: '/info/store-reviews' }
   ];
 
   toggleSubBar() {

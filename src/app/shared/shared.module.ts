@@ -30,6 +30,7 @@ const contenders = [
   NavSubMenuComponent,
   ValidationErrorsComponent,
   SearchComponent,
+  NavBarComponent,
 ];
 
 const modules = [
@@ -40,7 +41,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders, AButtonComponent, NavBarComponent],
+  declarations: [contenders, AButtonComponent],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })

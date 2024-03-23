@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { LinkInterface } from 'src/app/core/variables/header';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+  @Input() links!: LinkInterface[];
+  @Input() isClosed: boolean = true;
+  @Input() toggleSubBarLabel: string = '';
 
+  toggleSubBar() {
+    this.isClosed = !this.isClosed;
+  }
 }
