@@ -6,6 +6,7 @@ import { AuthenticationService, LoginForm } from 'src/app/core/services/authenti
 import { SvgService } from 'src/app/core/services/svg.service';
 import { switchMap } from 'rxjs';
 import { CustomErrorMessages } from 'src/app/core/variables/customFormsErrors';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,6 @@ import { CustomErrorMessages } from 'src/app/core/variables/customFormsErrors';
 })
 
 export class LoginComponent {
-  title = 'register';
   safeSvgCodes: { [key: string]: SafeHtml } = {};
 
   errorMessages = CustomErrorMessages;
@@ -34,6 +34,7 @@ export class LoginComponent {
   });
 
   constructor(
+    public ngxSmartModalService: NgxSmartModalService,
     private authService: AuthenticationService,
     private router: Router,
     private svgService: SvgService

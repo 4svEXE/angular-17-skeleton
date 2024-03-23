@@ -1,0 +1,48 @@
+<footer class="w-full py-10">
+  <div class="container m-auto grid lg:grid-cols-4 grid-cols-1">
+    <div class="logo col-span-1 mb-10 lg:mb-0 m-auto lg:m-0">
+      <div
+        routerLink="/"
+        [innerHTML]="safeSvgCodes['logo']"
+        class="logo mr-4"
+      ></div>
+    </div>
+
+    <div class="flex lg:col-span-3 col-span-1 flex-col md:flex-row">
+      <ng-container *ngFor="let section of sections; let i = index">
+        <div class="flex flex-col md:w-full w-auto px-3">
+          <div
+            class="flex w-full justify-between mb-4 border-b-2 md:border-b-0"
+            (click)="toggleActiveNavBox(i)"
+          >
+            <h5 class="title">
+              {{ section.title }}
+            </h5>
+            <div
+              [innerHTML]="safeSvgCodes['arrow']"
+              class="mr-2 arrow-icon md:hidden block"
+              [class.active]="navBars[i].active"
+            ></div>
+          </div>
+
+          <div
+            class="nav-box flex flex-col h-0 md:h-full"
+            [class.active]="navBars[i].active"
+          >
+            <ng-container *ngFor="let item of section.items">
+              <app-a-button
+                [label]="item.label"
+                [safeSvg]="item?.icon"
+                [routerLink]="item.value"
+              ></app-a-button>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="brand col-span-1 my-14 lg:my-0 m-auto lg:m-0">
+      <h6>© 2023 BonTex - інтернет-магазин килимів</h6>
+    </div>
+  </div>
+</footer>

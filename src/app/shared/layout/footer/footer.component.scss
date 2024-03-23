@@ -1,0 +1,50 @@
+footer {
+  background-color: #5C8C7C;
+
+  .logo {
+    fill: #fff;
+  }
+
+
+  h5.title {
+    font-family: Roboto Flex;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FAFAFA;
+    user-select: none;
+  }
+
+  .brand {
+    h6 {
+      font-family: Roboto Flex;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #FAFAFA;
+    }
+  }
+
+  .nav-box {
+    overflow: hidden;
+    border: 0px solid #FAFAFA;
+    transition: .3s;
+  }
+
+  .nav-box.active {
+    height: 100%;
+  }
+
+  .arrow-icon {
+    transition: .3s;
+    fill: #FAFAFA
+  }
+
+  .arrow-icon.active {
+    transform: rotate(180deg);
+  }
+}

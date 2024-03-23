@@ -52,6 +52,7 @@ ng g c shared/components/main-button --skip-tests
 ng g c shared/components/input --skip-tests
 ng g c shared/components/validation-errors --skip-tests
 ng g c shared/components/select --skip-tests
+ng g c shared/components/a-button --skip-tests
 
 ng g directive core/directives/control-value-accessor --skip-tests
 
@@ -62,6 +63,7 @@ ng g c pages/auth/register
 ng g c pages/auth/login --skip-tests
 ng g c shared/layout/header --skip-tests
 ng g c shared/layout/modal --skip-tests
+ng g c shared/layout/nav-bar --skip-tests
 
 ng g c pages/components/popup-modal --skip-tests
  

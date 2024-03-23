@@ -8,10 +8,17 @@ import { UserProfileModule } from './user-profile/user-profile.module';
 import { PopupModalComponent } from './components/popup-modal/popup-modal.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { AuthModule } from './auth/auth.module';
+import { InfoModule } from './info/info.module';
 
 const contenders = [HomeComponent, PopupModalComponent];
 
-const modules = [SharedModule, PagesRoutingModule, UserProfileModule, AuthModule];
+const modules = [
+  SharedModule,
+  PagesRoutingModule,
+  UserProfileModule,
+  AuthModule,
+  InfoModule,
+];
 
 @NgModule({
   declarations: [contenders],

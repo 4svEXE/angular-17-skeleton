@@ -11,9 +11,11 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SharedRoutingModule } from './shared-routing.module';
 import { ModalComponent } from './layout/modal/modal.component';
 import { HeaderSmallScreensComponent } from './layout/header/components/header-small-screens/header-small-screens.component';
+import { FooterComponent } from './layout/footer/footer.component';
 import { MobileTabBarComponent } from './layout/header/components/mobile-tab-bar/mobile-tab-bar.component';
 import { SearchComponent } from './layout/header/components/search/search.component';
 import { NavSubMenuComponent } from './layout/nav-sub-menu/nav-sub-menu.component';
+import { AButtonComponent } from './components/a-button/a-button.component';
 
 const contenders = [
   MainButtonComponent,
@@ -21,9 +23,12 @@ const contenders = [
   SelectComponent,
   ModalComponent,
   HeaderComponent,
+  FooterComponent,
   HeaderSmallScreensComponent,
   MobileTabBarComponent,
-  NavSubMenuComponent
+  NavSubMenuComponent,
+  ValidationErrorsComponent,
+  SearchComponent,
 ];
 
 const modules = [
@@ -34,7 +39,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders, ValidationErrorsComponent, SearchComponent],
+  declarations: [contenders, AButtonComponent],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })

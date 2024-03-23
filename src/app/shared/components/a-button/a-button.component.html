@@ -1,0 +1,4 @@
+<a *ngIf="label" [ngClass]="buttonClasses" [routerLink]="routerLink">
+  <div class="svg-box"  *ngIf="safeSvg" [innerHTML]="safeSvgCodes[safeSvg]"></div>
+  {{ label }}
+</a>
