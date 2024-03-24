@@ -1,0 +1,89 @@
+.product-card {
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+
+  .card-top-box {
+    .produt-group-title {
+      font-family: Roboto Flex;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #84B4A4;
+    }
+
+    .discount {
+      font-family: Roboto Flex;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+      text-align: right;
+      color: #F1655B;
+    }
+  }
+
+  .image-box {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+
+    img {
+      height: 354px;
+    }
+
+    .add-to-fav-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fafafa;
+      fill: #F1655B;
+      cursor: pointer;
+
+      &.active {
+        background-color: #F1655B;
+        fill: #fafafa;
+      }
+    }
+  }
+
+  .short-name {
+    height: 50px;
+    font-family: Roboto Flex;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1E1E1E;
+  }
+
+  .prices-box {
+    .crossed-out-price {
+      font-family: Roboto Flex;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+      letter-spacing: 0em;
+      text-align: right;
+      color: #D1CECE;
+    }
+
+    .current-price {
+      font-family: Roboto Flex;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 34px;
+      letter-spacing: 0em;
+      text-align: right;
+      color: #1E1E1E;
+    }
+  }
+}

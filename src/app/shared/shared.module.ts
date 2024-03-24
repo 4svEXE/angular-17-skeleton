@@ -17,6 +17,8 @@ import { SearchComponent } from './layout/header/components/search/search.compon
 import { NavSubMenuComponent } from './layout/nav-sub-menu/nav-sub-menu.component';
 import { AButtonComponent } from './components/a-button/a-button.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
+import { ReviewCardComponent } from './components/review-card/review-card.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 const contenders = [
   MainButtonComponent,
@@ -31,6 +33,9 @@ const contenders = [
   ValidationErrorsComponent,
   SearchComponent,
   NavBarComponent,
+  AButtonComponent,
+  ReviewCardComponent,
+  ProductCardComponent
 ];
 
 const modules = [
@@ -41,7 +46,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders, AButtonComponent],
+  declarations: [contenders],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })

@@ -1,0 +1,13 @@
+<div class="flex flex-col md:my-[120px] my-10">
+  <div class="flex md:mb-10 mb-3 md:ml-0">
+    <h2 class="component-title w-full text-center md:text-left">Відгуки</h2>
+  </div>
+
+  <owl-carousel-o [options]="customOptions" class="custom-carousel review-carousel">
+    <ng-container *ngFor="let review of reviews">
+      <ng-template carouselSlide [id]="review.content">
+        <app-review-card [review]="review"></app-review-card>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>

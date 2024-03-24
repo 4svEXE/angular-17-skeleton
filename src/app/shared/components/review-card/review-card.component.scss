@@ -1,0 +1,59 @@
+.review-box {
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #ACDCCC;
+
+  .username {
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #1E1E1E;
+  }
+
+  .publication-date {
+    font-family: Roboto Flex;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #b4b4b4;
+  }
+
+  .review {
+    color: #1E1E1E;
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    &.truncate-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      /* Кількість рядків, після яких текст буде обрізаний */
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+    }
+
+    &.active {
+      overflow: visible;
+      display: block;
+    }
+  }
+
+  .arrow {
+    fill: #5C8C7C;
+    transition: .3s;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+}

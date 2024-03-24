@@ -1,0 +1,29 @@
+<div class="review-box md:mr-4 mr-0">
+  <div class="flex justify-between">
+    <div class="flex flex-col">
+      <strong class="username">{{ review.username }}</strong>
+      <span class="publication-date">{{ review.publicationDate }}</span>
+    </div>
+
+    <div class="rating-box flex">
+      <ng-container *ngFor="let _ of getRatingArray(review.rating)">
+        <div class="rating-rug" [innerHTML]="safeSvgCodes['rug']"></div>
+      </ng-container>
+    </div>
+  </div>
+
+  <p class="review truncate-text" [class.active]="isOpenReview">
+    {{ review.content }}
+  </p>
+
+  <div class="flex justify-end mt-2" (click)="toggleIsOpenReview()">
+    <a class="a-primary-link flex">
+      {{ isOpenReview ? "Приховати відгук" : "Читати весь відгук" }}
+      <div
+        class="arrow ml-2"
+        [class.active]="isOpenReview"
+        [innerHTML]="safeSvgCodes['arrow']"
+      ></div>
+    </a>
+  </div>
+</div>

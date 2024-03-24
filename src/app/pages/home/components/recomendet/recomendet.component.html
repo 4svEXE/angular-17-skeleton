@@ -1,0 +1,21 @@
+<div class="flex flex-col md:my-[120px] my-10">
+  <div class="nav-box md:mb-10 mb-3 md:ml-0 ml-2">
+    <div class="nav flex">
+      <a href="" class="a-secondary-link active"> Хіти продажу </a>
+
+      <a href="" class="a-secondary-link"> Новинки </a>
+
+      <a href="" class="a-secondary-link"> Топ акції </a>
+
+      <a href="" class="a-secondary-link"> Ми рекомендуємо </a>
+    </div>
+  </div>
+
+  <owl-carousel-o [options]="customOptions" class="custom-carousel">
+    <ng-container *ngFor="let product of products">
+      <ng-template carouselSlide [id]="product.id">
+        <app-product-card [product]="product"></app-product-card>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>

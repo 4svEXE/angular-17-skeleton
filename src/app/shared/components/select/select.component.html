@@ -12,3 +12,23 @@
     [errors]="control.errors"
   ></app-validation-errors>
 </div>
+
+<!-- <form [formGroup]="formGroup">
+  <div class="flex flex-col">
+    <div class="flex justify-center m-4">
+      <div class="flex w-[300px]">
+        <app-select class="w-full"
+          selectId="gender"
+          label="select your gender"
+          [options]="options"
+          formControlName="gender"
+          [customErrorMessages]="errorMessages"
+        />
+      </div>
+    </div>
+
+    <div class="flex justify-center m-4">
+      {{ formGroup.value | json }}
+    </div>
+  </div>
+</form> -->
