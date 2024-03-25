@@ -4,7 +4,10 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-recomendet',
   templateUrl: './recomendet.component.html',
-  styleUrls: ['./recomendet.component.scss'],
+  styleUrls: [
+    './recomendet.component.scss',
+    '../../../components/a-secondary/a-secondary.scss',
+  ],
 })
 export class RecomendetComponent {
   arrowPath = 'assets/img/pages/home/arrow_carousel.svg';

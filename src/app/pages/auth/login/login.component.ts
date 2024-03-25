@@ -52,13 +52,14 @@ export class LoginComponent {
       password: this.formGroup.get('password')?.value || '',
     };
 
-    this.authService;
+    // this.authService;
     this.authService
       .login(loginForm)
       .pipe(switchMap(() => this.authService.getUserId()))
       .subscribe((userId) => {
         console.log('userId', userId);
         this.router.navigate(['user/' + userId]);
+        this.ngxSmartModalService.getModal('popupModal').close()
       });
   }
 }

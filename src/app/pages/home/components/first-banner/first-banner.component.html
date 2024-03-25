@@ -1,99 +1,28 @@
 <div class="mt-10">
   <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>
-      <div
-        class="first-banner flex items-center justify-center overflow-hidden md:h-auto h-[260px] min-h-40 bg-slate-300"
-      >
-        <img
-          src="{{ imgPath + 'slide1.png' }}"
-          alt="slide"
-          class="flex md:scale-100 scale-[2.5]"
-        />
+    <ng-container *ngFor="let slide of slides">
+      <ng-template carouselSlide>
+        <div
+          class="first-banner flex items-center justify-center overflow-hidden md:h-auto h-[260px] min-h-40 bg-slate-300"
+        >
+          <img
+            [src]="imgPath + slide.imgPath"
+            class="flex md:scale-100 scale-[2.5]"
+          />
 
-        <div class="overlay flex flex-col justify-center items-center">
-          <h2 class="mb-10 px-2 text-center md:text-left">
-            BonTex - ваш шлях до комфорту та стилю
-          </h2>
+          <div class="overlay flex flex-col justify-center items-center">
+            <h2 class="mb-10 px-2 text-center md:text-left">
+              {{ slide.label }}
+            </h2>
 
-          <app-button
-            [label]="'Перейти до каталогу'"
-            [additionalClasses]="'primary px-4 py-3'"
-            [routerLink]="'/'"
-          ></app-button>
+            <app-button
+              [label]="'Перейти до каталогу'"
+              [additionalClasses]="'primary px-4 py-3'"
+              [routerLink]="'/'"
+            ></app-button>
+          </div>
         </div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div
-        class="first-banner flex items-center justify-center overflow-hidden md:h-auto h-[260px] min-h-40 bg-slate-300"
-      >
-        <img
-          src="{{ imgPath + 'slide1.png' }}"
-          alt="slide"
-          class="flex md:scale-100 scale-[2.5]"
-        />
-
-        <div class="overlay flex flex-col justify-center items-center">
-          <h2 class="mb-10 px-2 text-center md:text-left">
-            BonTex - ваш шлях до комфорту та стилю
-          </h2>
-
-          <app-button
-            [label]="'Перейти до каталогу'"
-            [additionalClasses]="'primary px-4 py-3'"
-            [routerLink]="'/'"
-          ></app-button>
-        </div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div
-        class="first-banner flex items-center justify-center overflow-hidden md:h-auto h-[260px] min-h-40 bg-slate-300"
-      >
-        <img
-          src="{{ imgPath + 'slide1.png' }}"
-          alt="slide"
-          class="flex md:scale-100 scale-[2.5]"
-        />
-
-        <div class="overlay flex flex-col justify-center items-center">
-          <h2 class="mb-10 px-2 text-center md:text-left">
-            BonTex - ваш шлях до комфорту та стилю
-          </h2>
-
-          <app-button
-            [label]="'Перейти до каталогу'"
-            [additionalClasses]="'primary px-4 py-3'"
-            [routerLink]="'/'"
-          ></app-button>
-        </div>
-      </div>
-    </ng-template>
-
-    <ng-template carouselSlide>
-      <div
-        class="first-banner flex items-center justify-center overflow-hidden md:h-auto h-[260px] min-h-40 bg-slate-300"
-      >
-        <img
-          src="{{ imgPath + 'slide1.png' }}"
-          alt="slide"
-          class="flex md:scale-100 scale-[2.5]"
-        />
-
-        <div class="overlay flex flex-col justify-center items-center">
-          <h2 class="mb-10 px-2 text-center md:text-left">
-            BonTex - ваш шлях до комфорту та стилю
-          </h2>
-
-          <app-button
-            [label]="'Перейти до каталогу'"
-            [additionalClasses]="'primary px-4 py-3'"
-            [routerLink]="'/'"
-          ></app-button>
-        </div>
-      </div>
-    </ng-template>
+      </ng-template>
+    </ng-container>
   </owl-carousel-o>
 </div>

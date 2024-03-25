@@ -26,4 +26,10 @@ export class FirstBannerComponent {
     nav: false,
     autoHeight: true
   };
+
+  slides: { imgPath: string, label: string }[] = [
+    { imgPath: 'slide1.png', label: 'BonTex - ваш шлях до комфорту та стилю' },
+    { imgPath: 'slide1.png', label: 'BonTex2 - ваш шлях до комфорту та стилю' },
+    { imgPath: 'slide1.png', label: 'BonTex3 - ваш шлях до комфорту та стилю' },
+  ];
 }

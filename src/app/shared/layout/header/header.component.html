@@ -31,7 +31,7 @@
           </div>
 
           <!-- if unautorised -->
-          <div *ngIf="!username" class="flex ml-3 xl:ml-5 relative">
+          <div *ngIf="!user" class="flex ml-3 xl:ml-5 relative">
             <div
               [innerHTML]="safeSvgCodes['profile']"
               class="button-header"
@@ -40,10 +40,13 @@
           </div>
 
           <!-- if autorised user -->
-          <div *ngIf="username" class="flex ml-3 xl:ml-5 relative">
-            <a class="profile-icon" routerLink="/user/:id" alt="cart">{{
-              username
-            }}</a>
+          <div *ngIf="authService.getUserIdFromStorage()" class="flex ml-3 xl:ml-5 relative">
+            <a
+              class="text-[#1f1f1f]"
+              [routerLink]="['/user']"
+              alt="cart"
+              >{{ user?.name }}</a
+            >
             <!-- <div class="info flex items-center justify-center">21</div> -->
           </div>
         </div>
@@ -51,7 +54,7 @@
     </div>
 
     <div
-      class="bottom-section py-4 xl:py-10 w-full flex items-center flex-col justify-between lg:flex-row"
+      class="bottom-section py-4 xl:py-10 w-full flex items-center justify-between flex-col lg:flex-row"
     >
       <app-button
         [safeSvg]="safeSvgCodes['catalog']"

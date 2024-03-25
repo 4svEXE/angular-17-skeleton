@@ -60,8 +60,13 @@ export class AuthenticationService {
       })
       .pipe(
         map((token) => {
-          console.log('token', token);
+          // console.log('token', token);
           localStorage.setItem(JWT_NAME, token.access_token);
+
+          this.getUserId().subscribe((id) => {
+            this.setUserIdToStorage(id)
+          });
+
           return token;
         }),
         catchError((error) => {
@@ -77,7 +82,7 @@ export class AuthenticationService {
    * @returns An Observable with the registration response.
    */
   register(user: User): Observable<any> {
-    console.log('user', user);
+    // console.log('user', user);
     return this.http.post<any>('api/user/', user);
   }
 
@@ -99,13 +104,16 @@ export class AuthenticationService {
    */
   isAuthenticated(): boolean {
     const token = localStorage.getItem(JWT_NAME);
-    return !this.jwtHelperService.isTokenExpired(token);
+    console.log('token', token, this.jwtHelperService.isTokenExpired(token));
+
+    // чи не застарілий токен
+    return this.jwtHelperService.isTokenExpired(token);
   }
 
-  isCorrectId(urlId: string): boolean {
+  isCorrectId(): boolean {
     this.getUserId().subscribe((jwtId) => {
-      console.log('jwtId == urlId', jwtId, urlId);
-      return jwtId == urlId;
+      console.log('jwtId == urlId', jwtId === this.getUserIdFromStorage());
+      return jwtId === this.getUserIdFromStorage();
     });
 
     return false;
@@ -116,14 +124,41 @@ export class AuthenticationService {
    * @returns An Observable of the user ID or null if not available.
    */
   getUserId(): Observable<string> {
-    console.log('getUserId');
+    // console.log('getUserId');
     return of(localStorage.getItem(JWT_NAME)).pipe(
       switchMap((jwt: string | null) => {
         if (jwt) {
           // If jwt is not null, decode the token and extract the user id
           const decodedToken = this.jwtHelperService.decodeToken(jwt);
-          console.log('decodedToken', decodedToken);
+          // console.log('decodedToken', decodedToken);
           return of(decodedToken ? decodedToken.user.id : null);
+        } else {
+          // If jwt is null, return null
+          console.log('token is null');
+          return of(null);
+        }
+      })
+    );
+  }
+
+  setUserIdToStorage(id: string) {
+    localStorage.setItem('user_id', id);
+  }
+
+  getUserIdFromStorage() {
+    return localStorage.getItem('user_id');
+  }
+
+  // get email for a test -- need get an user name
+  getUserName(): Observable<string> {
+    // console.log('getUserId');
+    return of(localStorage.getItem(JWT_NAME)).pipe(
+      switchMap((jwt: string | null) => {
+        if (jwt) {
+          // If jwt is not null, decode the token and extract the user id
+          const decodedToken = this.jwtHelperService.decodeToken(jwt);
+          // console.log('decodedToken', decodedToken);
+          return of(decodedToken ? decodedToken.user.email : null);
         } else {
           // If jwt is null, return null
           console.log('token is null');
@@ -138,5 +173,6 @@ export class AuthenticationService {
    */
   logOut(): void {
     localStorage.removeItem(JWT_NAME);
+    localStorage.removeItem('user_id');
   }
 }

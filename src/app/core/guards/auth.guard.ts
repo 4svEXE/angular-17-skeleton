@@ -14,18 +14,20 @@ export const AuthGuard: CanActivateFn = (
   const router: Router = inject(Router);
   const auth: AuthenticationService = inject(AuthenticationService);
 
-  const userIdFromUrl = route.params['id'] || '';
-
   console.log(
-    '!auth.isAuthenticated() userIdFromUrl: ',
-    !auth.isAuthenticated(),
-    auth.isCorrectId(userIdFromUrl)
+    'isAuthenticated: ',
+    auth.isAuthenticated(),
+    localStorage.getItem('user-jwt-token')
   );
 
-  if (!auth.isAuthenticated() || auth.isCorrectId(userIdFromUrl)) {
-    router.navigate(['']);
-    return false;
-  }
+  // if (!auth.isAuthenticated()) {
+  //   console.log('guard is reject request');
+
+  // Чомусь спрацьовує гвард при логіні
+
+  //   router.navigate(['/auth/login']);
+  //   return false;
+  // }
 
   return true;
 };

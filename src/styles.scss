@@ -2,5 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+.custom-carousel {
+  position: relative;
+  display: block;
+
+  .nav-box {
+    overflow: hidden;
+    overflow-x: auto;
+
+    .nav {
+      width: 100%;
+    }
+
+    &::-webkit-scrollbar-thumb,
+    &::-o-scrollbar-thumb {
+      display: none;
+    }
+  }
+
+  .owl-nav {
+    position: absolute;
+    right: 0;
+    top: -87px;
+    display: block;
+
+    & [class*="owl-"] {
+      color: #1e1e1e;
+      font-size: 14px;
+      margin: 5px;
+      padding: 4px 7px;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 3px;
+      background-color: inherit;
+      transition: 0.3s;
+      opacity: 0.6;
+
+      &:hover {
+        background-color: inherit;
+        opacity: 1;
+      }
+
+      .arrow-left {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.review-carousel {
+    .owl-nav.disabled {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-carousel {
+    .owl-nav {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-box {
+    overflow: hidden;
+    overflow-x: scroll;
+
+    .nav {
+      width: max-content;
+    }
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    scrollbar-color: transparent;
+  }
+}
