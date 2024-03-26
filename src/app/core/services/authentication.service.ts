@@ -64,7 +64,7 @@ export class AuthenticationService {
           localStorage.setItem(JWT_NAME, token.access_token);
 
           this.getUserId().subscribe((id) => {
-            this.setUserIdToStorage(id)
+            this.setUserIdToStorage(id);
           });
 
           return token;
@@ -107,17 +107,21 @@ export class AuthenticationService {
     console.log('token', token, this.jwtHelperService.isTokenExpired(token));
 
     // чи не застарілий токен
-    return this.jwtHelperService.isTokenExpired(token);
+    return !this.jwtHelperService.isTokenExpired(token);
   }
 
-  isCorrectId(): boolean {
-    this.getUserId().subscribe((jwtId) => {
-      console.log('jwtId == urlId', jwtId === this.getUserIdFromStorage());
-      return jwtId === this.getUserIdFromStorage();
-    });
+  //  isCorrectId():boolean {
+  //   this.getUserId().subscribe((jwtId) => {
+  //     console.log('jwtId, Id', jwtId ,this.getUserIdFromStorage());
 
-    return false;
-  }
+  //     if(jwtId && this.getUserIdFromStorage()) {
+  //       return jwtId === this.getUserIdFromStorage();
+  //     }
+  //     return false;
+  //   });
+
+  //   return false;
+  // }
 
   /**
    * Gets the user ID from the decoded JWT token.
@@ -166,6 +170,17 @@ export class AuthenticationService {
         }
       })
     );
+  }
+
+  getIdFromJWT() {
+    const jwt = localStorage.getItem(JWT_NAME);
+
+    if (jwt) {
+      const decodedToken = this.jwtHelperService.decodeToken(jwt);
+      return decodedToken.user.id;
+    }
+
+    return undefined;
   }
 
   /**

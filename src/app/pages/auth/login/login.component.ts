@@ -57,8 +57,8 @@ export class LoginComponent {
       .login(loginForm)
       .pipe(switchMap(() => this.authService.getUserId()))
       .subscribe((userId) => {
-        console.log('userId', userId);
-        this.router.navigate(['user/' + userId]);
+        // console.log('userId', userId);
+        this.router.navigate(['user']);
         this.ngxSmartModalService.getModal('popupModal').close()
       });
   }

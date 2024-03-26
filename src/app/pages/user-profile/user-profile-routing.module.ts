@@ -16,8 +16,12 @@ const routes: Routes = [
   {
     path: '',
     component: UserProfileComponent,
-    redirectTo: 'orders',
     children: [
+      {
+        path: '',
+        redirectTo: 'private-dates',
+        pathMatch: 'full'
+      },
       {
         path: 'private-dates',
         component: PrivateDatesComponent,
@@ -56,7 +60,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
