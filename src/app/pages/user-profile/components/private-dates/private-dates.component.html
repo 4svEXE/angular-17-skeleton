@@ -1,0 +1,38 @@
+<div class="content-box">
+  <div class="flex mb-10">
+    <h2>Особисті дані</h2>
+    <div
+      [innerHTML]="safeSvgCodes['pen']"
+      class="svg flex items-center ml-1 cursor-pointer"
+      routerLink="edit"
+    ></div>
+  </div>
+
+  <div class="flex mb-4">
+    <div class="grid grid-cols-4">
+      <div class="subtitle">
+        <h5>ПІБ</h5>
+      </div>
+
+      <span> {{ user?.username || "-" }}</span>
+    </div>
+  </div>
+  <div class="flex mb-4">
+    <div class="grid grid-cols-2">
+      <div class="subtitle">
+        <h5>Номер телефону</h5>
+      </div>
+
+      <span> {{ user?.phone || "-" }} </span>
+    </div>
+  </div>
+  <div class="flex mb-4">
+    <div class="grid grid-cols-2">
+      <div class="subtitle">
+        <h5>Електрона пошта</h5>
+      </div>
+
+      <span> {{ user?.email || "-" }} </span>
+    </div>
+  </div>
+</div>

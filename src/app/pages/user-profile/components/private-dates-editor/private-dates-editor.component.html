@@ -1,0 +1,57 @@
+<div class="content-box">
+  <div class="flex mb-10">
+    <h2>Особисті дані</h2>
+  </div>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-col">
+      <label for="name">ПІБ:</label>
+      <input
+        class="form-field px-3 w-[345px] mb-4"
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="{{ user?.username || 'Прізвище Імя Побатькові' }}"
+      />
+    </div>
+
+    <div class="flex flex-col">
+      <label for="name">Електронна пошта:</label>
+      <input
+        class="form-field px-3 w-[345px] mb-4"
+        type="text"
+        id="name"
+        formControlName="email"
+        [placeholder]="user?.email || 'pesPatron@gmail.com'"
+        value="{{ user?.email || 'pesPatron@gmail.com' }}"
+      />
+    </div>
+
+    <div class="flex flex-col">
+      <label for="name">Номер телефону:</label>
+      <input
+        class="form-field px-3 w-[345px] mb-4"
+        type="text"
+        id="name"
+        formControlName="phone"
+        placeholder="{{ user?.phone || '098XXXXXXX' }}"
+      />
+    </div>
+
+    <div class="flex">
+      <app-button
+        label="Скасувати"
+        additionalClasses="secondary my-4 mr-4"
+        routerLink="/user/private-dates"
+      ></app-button>
+
+      <a type="submit" (click)="onSubmit()">
+        <app-button
+          [label]="'Відправити'"
+          [additionalClasses]="'primary my-4'"
+          [isDisabled]="userForm.invalid"
+        ></app-button>
+      </a>
+    </div>
+  </form>
+</div>

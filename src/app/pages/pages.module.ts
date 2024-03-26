@@ -18,7 +18,6 @@ import { AboutHomePageComponent } from './home/components/about-home-page/about-
 
 const contenders = [
   HomeComponent,
-
   PopupModalComponent,
   FirstBannerComponent,
   RecomendetComponent,

@@ -28,7 +28,7 @@ export class UserProfileComponent {
         .pipe(
           map((user: User) => {
             this.user = user;
-            console.log('this.user', this.user);
+            // console.log('this.user', this.user);
           })
         )
         .subscribe();
@@ -45,14 +45,12 @@ export class UserProfileComponent {
   isClosedSubBar: boolean = true;
 
   links: LinkInterface[] = [
-    { title: 'Каталог', path: '/info/catalog-info' },
-    { title: 'Доставка та оплата', path: '/info/delivery-and-payments' },
-    { title: 'Обмін та повернення', path: '/info/exchange-and-returns' },
-    { title: 'Про нас', path: '/info/about-us' },
-    { title: 'Контакти', path: '/info/contacts' },
-    { title: 'Угода користувача', path: '/info/user-agreement' },
-    { title: 'Питання та відповіді', path: '/info/faq' },
-    { title: 'Відгуки про магазин', path: '/info/store-reviews' }
+    { title: 'Особисті дані', path: 'private-dates' },
+    { title: 'Пароль', path: 'password' },
+    { title: 'Мої замовлення', path: 'orders' },
+    { title: 'Обрані товари', path: 'selected' },
+    { title: 'Мої відгуки', path: 'reviews'},
+    { title: 'Вихід', path: 'logout' },
   ];
 
   toggleSubBar() {

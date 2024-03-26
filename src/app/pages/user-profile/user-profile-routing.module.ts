@@ -1,19 +1,54 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserProfileComponent } from './user-profile.component';
 import { AuthGuard } from 'src/app/core/guards/auth.guard';
+
+import { UserProfileComponent } from './user-profile.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { PasswordComponent } from './components/password/password.component';
+import { PasswordEditorComponent } from './components/password-editor/password-editor.component';
+import { PrivateDatesComponent } from './components/private-dates/private-dates.component';
+import { PrivateDatesEditorComponent } from './components/private-dates-editor/private-dates-editor.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
+import { SelectedGoodsComponent } from './components/selected-goods/selected-goods.component';
 
 const routes: Routes = [
   {
-    path: 'user',
+    path: '',
+    component: UserProfileComponent,
+    redirectTo: 'orders',
     children: [
       {
-        path: '',
-        component: UserProfileComponent,
+        path: 'private-dates',
+        component: PrivateDatesComponent,
       },
       {
-        path: ':id',
-        component: UserProfileComponent,
+        path: 'private-dates/edit',
+        component: PrivateDatesEditorComponent,
+      },
+      {
+        path: 'password',
+        component: PasswordComponent,
+      },
+      {
+        path: 'password/edit',
+        component: PasswordEditorComponent,
+      },
+      {
+        path: 'orders',
+        component: OrdersComponent,
+      },
+      {
+        path: 'selected',
+        component: SelectedGoodsComponent,
+      },
+      {
+        path: 'reviews',
+        component: ReviewsComponent,
+      },
+      {
+        path: 'logout',
+        component: LogoutComponent,
       },
     ],
     canActivate: [AuthGuard],
@@ -21,6 +56,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
