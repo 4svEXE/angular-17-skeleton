@@ -5,9 +5,6 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 import { HeaderLinks, LinkInterface } from 'src/app/core/variables/header';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { User, UserService } from 'src/app/core/services/user.service';
-import { map } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -20,24 +17,16 @@ export class HeaderComponent implements OnInit {
 
   links: LinkInterface[] = HeaderLinks;
   user!: { name: string; id: string } | undefined;
-  userFirstLetter: string = ''
+  userFirstLetter: string = '';
 
   constructor(
     private svgService: SvgService,
     public ngxSmartModalService: NgxSmartModalService,
     public authService: AuthenticationService,
-    private userService: UserService,
-    private router: Router
+    private userService: UserService
   ) {}
 
-  // винети в сервіс
   ngOnInit() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.refreshData();
-    });
-
     this.refreshData();
   }
 
@@ -46,12 +35,10 @@ export class HeaderComponent implements OnInit {
     if (!this.authService.getUserIdFromStorage()) return;
 
     this.authService.getUserId().subscribe((id) => {
-      this.userService
-        .findOne(id)
-        .subscribe((user: User) => {
-          this.user = { name: user.email, id: user.id };
-          this.userFirstLetter =  this.user?.name?.[0]?.toUpperCase() ?? ''
-        });
+      this.userService.findOne(id).subscribe((user: User) => {
+        this.user = { name: user.email, id: user.id };
+        this.userFirstLetter = this.user?.name?.[0]?.toUpperCase() ?? '';
+      });
     });
   }
 }
