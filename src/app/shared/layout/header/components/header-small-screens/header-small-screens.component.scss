@@ -84,7 +84,6 @@ header {
         background: #FAFAFA;
         transition: .3s;
 
-        //styleName: Desktop/OTHER/Footer;
         font-family: Roboto Flex;
         font-size: 14px;
         font-weight: 400;
@@ -92,6 +91,8 @@ header {
         letter-spacing: 0em;
         text-align: left;
         color: #1E1E1E;
+
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       }
 
       .active {

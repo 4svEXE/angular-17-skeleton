@@ -4,7 +4,7 @@ export interface LinkInterface {
 }
 
 export const HeaderLinks: LinkInterface[] = [
-  { title: 'Акції', path: '/sales' },
+  { title: 'Акції', path: '/catalog/promotions' },
   { title: 'Доставка та оплата', path: '/info/delivery-and-payments' },
   { title: 'Обмін та повернення', path: '/info/exchange-and-returns' },
   { title: 'Про нас', path: '/info/about-us' },

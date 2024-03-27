@@ -61,6 +61,7 @@ ng g m pages
 ng g module pages/auth/auth
 ng g c pages/auth/register
 ng g c pages/auth/login --skip-tests
+ng g c pages/catalog --skip-tests
 ng g c shared/layout/header --skip-tests
 ng g c shared/layout/modal --skip-tests
 ng g c shared/layout/nav-bar --skip-tests

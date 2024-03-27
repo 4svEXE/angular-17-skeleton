@@ -17,8 +17,9 @@ header {
       fill: #5c8c7c;
     }
 
-    .user-icon{
-      width: 24px; height: 24px;
+    .user-icon {
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background-color: #5c8c7c;
       color: #fafafa;
@@ -84,6 +85,37 @@ header {
     border-top: 1px solid #5c8c7c;
     z-index: 5;
     margin-top: 76px;
+
+
+    .categories-box{
+      position: relative;
+
+      .categories {
+        position: absolute;
+        z-index: 20;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        min-width: 100%;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px;
+        background-color: #fafafa;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        li{
+          cursor: pointer;
+        }
+      }
+
+      &:hover{
+        .categories {
+          display: flex;
+        }
+      }
+    }
+
 
     .button {
       border-radius: 4px;

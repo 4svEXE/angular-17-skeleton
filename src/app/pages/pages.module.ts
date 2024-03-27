@@ -15,6 +15,7 @@ import { RecomendetComponent } from './home/components/recomendet/recomendet.com
 import { SecondBannerComponent } from './home/components/second-banner/second-banner.component';
 import { ReviewsHomePageComponent } from './home/components/reviews-home-page/reviews-home-page.component';
 import { AboutHomePageComponent } from './home/components/about-home-page/about-home-page.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 const contenders = [
   HomeComponent,
@@ -24,6 +25,7 @@ const contenders = [
   SecondBannerComponent,
   ReviewsHomePageComponent,
   AboutHomePageComponent,
+  CatalogComponent,
 ];
 
 const modules = [

@@ -10,6 +10,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  width: max-content;
 
   &:after {
     content: "";
@@ -31,5 +32,14 @@
     height: 25px;
     fill: #fafafa;
     margin-right: 8px;
+  }
+
+  &.secondary{
+    color: #5c8c7c;
+    fill: #5c8c7c;
+
+    &:after{
+      background-color: #5c8c7c;
+    }
   }
 }

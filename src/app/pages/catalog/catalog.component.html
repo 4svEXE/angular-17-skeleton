@@ -1,0 +1,10 @@
+компонент крихти
+тайтл
+вивід обраних фільтрів + седект сортування
+стікі компонент фільтрів + вивід продуктів з пагінацією
+
+<ol *ngIf="productsToDisplay">
+  <li *ngFor="let product of productsToDisplay" id="product.description">
+    {{product | json}}
+  </li>
+</ol>

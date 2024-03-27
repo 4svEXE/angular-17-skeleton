@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { CatalogComponent } from './catalog/catalog.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,14 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user-profile/user-profile.module').then((m) => m.UserProfileModule),
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'catalog',
+    component: CatalogComponent,
+  },
+  {
+    path: 'catalog/:category',
+    component: CatalogComponent,
   },
 ];
 

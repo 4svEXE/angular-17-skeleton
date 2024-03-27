@@ -12,7 +12,7 @@
             href="#"
             routerLink="{{ link.path }}"
             [routerLinkActive]="['active']"
-            [class.red]="link.path === '/sales'"
+            [class.red]="link.path === '/catalog/promotions'"
             class="xl:mx-4 mx-3"
           >
             {{ link.title }}
@@ -64,12 +64,34 @@
     <div
       class="bottom-section py-4 xl:py-10 w-full flex items-center justify-between flex-col lg:flex-row"
     >
-      <app-button
-        [safeSvg]="safeSvgCodes['catalog']"
-        [label]="'Каталог товарів'"
-        [additionalClasses]="'primary px-4 py-3'"
-        [routerLink]="'/'"
-      ></app-button>
+      <div class="categories-box">
+        <app-button
+          [safeSvg]="safeSvgCodes['catalog']"
+          [label]="'Каталог товарів'"
+          [additionalClasses]="'primary px-4 '"
+        ></app-button>
+
+        <ul class="categories">
+          <li routerLink="catalog/rugs">
+            <app-a-button
+              label="Килими дитячі Україна"
+              additionalClasses="secondary"
+            ></app-a-button>
+          </li>
+          <li routerLink="catalog/rugs-ua">
+            <app-a-button
+              label="Килими дитячі Україна"
+              additionalClasses="secondary"
+            ></app-a-button>
+          </li>
+          <li routerLink="catalog/rugs-cz">
+            <app-a-button
+              label="Килими дитячі Україна"
+              additionalClasses="secondary"
+            ></app-a-button>
+          </li>
+        </ul>
+      </div>
 
       <app-search class="w-[400px]"></app-search>
 
