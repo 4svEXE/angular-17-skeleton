@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
 
   links: LinkInterface[] = HeaderLinks;
   user!: { name: string; id: string } | undefined;
+  userFirstLetter: string = ''
 
   constructor(
     private svgService: SvgService,
@@ -31,23 +32,16 @@ export class HeaderComponent implements OnInit {
 
   // винети в сервіс
   ngOnInit() {
-    console.log('init');
-
-    // Спочатку слідкуємо за змінами роутів
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      // Викликаємо метод оновлення даних тут
       this.refreshData();
     });
 
-    // Викликаємо метод оновлення даних при завантаженні компонента
     this.refreshData();
   }
 
   refreshData() {
-    // console.log('refresh user', this.authService.getUserIdFromStorage());
-
     this.user = undefined;
     if (!this.authService.getUserIdFromStorage()) return;
 
@@ -56,7 +50,7 @@ export class HeaderComponent implements OnInit {
         .findOne(id)
         .subscribe((user: User) => {
           this.user = { name: user.email, id: user.id };
-          // console.log('this.user', this.user);
+          this.userFirstLetter =  this.user?.name?.[0]?.toUpperCase() ?? ''
         });
     });
   }

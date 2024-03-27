@@ -17,6 +17,16 @@ header {
       fill: #5c8c7c;
     }
 
+    .user-icon{
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background-color: #5c8c7c;
+      color: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     nav {
       a {
         font-size: 18px;

@@ -20,18 +20,18 @@
         </nav>
 
         <div class="controls flex">
-          <div class="flex ml-3 xl:ml-5 relative">
+          <div class="flex ml-3 xl:ml-5 relative" [routerLink]="['/user/orders']">
             <div [innerHTML]="safeSvgCodes['cart']" class="button-header"></div>
             <div class="info flex items-center justify-center">2</div>
           </div>
 
-          <div class="flex ml-3 xl:ml-5 relative">
+          <div class="flex ml-3 xl:ml-5 relative" [routerLink]="['/user/selected']">
             <div [innerHTML]="safeSvgCodes['like']" class="button-header"></div>
             <div class="info flex items-center justify-center">99</div>
           </div>
 
           <!-- if unautorised -->
-          <div *ngIf="!user" class="flex ml-3 xl:ml-5 relative">
+          <div *ngIf="!authService.getUserIdFromStorage()" class="flex ml-3 xl:ml-5 relative">
             <div
               [innerHTML]="safeSvgCodes['profile']"
               class="button-header"
@@ -42,12 +42,12 @@
           <!-- if autorised user -->
           <div *ngIf="authService.getUserIdFromStorage()" class="flex ml-3 xl:ml-5 relative">
             <a
-              class="text-[#1f1f1f]"
+              class="user-icon"
               [routerLink]="['/user']"
               alt="cart"
-              >{{ user?.name }}</a
+              >{{userFirstLetter }}</a
             >
-            <!-- <div class="info flex items-center justify-center">21</div> -->
+            <div class="info flex items-center justify-center">21</div>
           </div>
         </div>
       </div>
