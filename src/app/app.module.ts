@@ -13,6 +13,7 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { ControlValueAccessor } from './core/directives/control-value-accessor.directive';
 import { AuthModule } from './pages/auth/auth.module';
 
+
 @NgModule({
   declarations: [AppComponent, ControlValueAccessor],
   imports: [

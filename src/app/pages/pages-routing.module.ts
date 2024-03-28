@@ -20,16 +20,25 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    loadChildren: () => import('./user-profile/user-profile.module').then((m) => m.UserProfileModule),
+    loadChildren: () =>
+      import('./user-profile/user-profile.module').then(
+        (m) => m.UserProfileModule
+      ),
     canActivate: [AuthGuard],
   },
   {
     path: 'catalog',
     component: CatalogComponent,
+    data: {
+      breadcrumb: 'Каталог',
+    },
   },
   {
     path: 'catalog/:category',
     component: CatalogComponent,
+    data: {
+      breadcrumb: 'Каталог',
+    },
   },
 ];
 

@@ -17,6 +17,7 @@ import { ReviewsHomePageComponent } from './home/components/reviews-home-page/re
 import { AboutHomePageComponent } from './home/components/about-home-page/about-home-page.component';
 import { CatalogComponent } from './catalog/catalog.component';
 
+
 const contenders = [
   HomeComponent,
   PopupModalComponent,

@@ -19,6 +19,8 @@ import { AButtonComponent } from './components/a-button/a-button.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 const contenders = [
   MainButtonComponent,
@@ -35,7 +37,8 @@ const contenders = [
   NavBarComponent,
   AButtonComponent,
   ReviewCardComponent,
-  ProductCardComponent
+  ProductCardComponent,
+  BreadcrumbComponent,
 ];
 
 const modules = [
@@ -43,6 +46,7 @@ const modules = [
   SharedRoutingModule,
   ReactiveFormsModule,
   FormsModule,
+  BreadcrumbModule,
 ];
 
 @NgModule({
