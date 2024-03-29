@@ -98,7 +98,6 @@ h2.page-title {
     }
 
     scrollbar-color: transparent;
-
   }
 }
 
@@ -107,3 +106,85 @@ h2.page-title {
   padding-left: 0px;
 }
 /* Braadcrumbs */
+
+/* Pagination */
+.ngx-pagination {
+  /* background: red; */
+  display: flex;
+
+  font-family: Roboto Flex;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: left;
+
+  .pagination-previous {
+
+    &::before {
+      content: "" !important;
+    }
+    a::before {
+      content: "❮" !important;
+    }
+    a{
+      border: none !important;
+    }
+  }
+  .pagination-next {
+    a{
+      border: none !important;
+    }
+    a::after {
+      content: "❯" !important;
+    }
+
+    &.disabled {
+      a::after {
+        content: "" !important;
+      }
+    }
+  }
+}
+.ngx-pagination .pagination-next.disabled:after {
+  content: "" !important;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+.ngx-pagination a,
+.ngx-pagination button {
+  color: #0a0a0a;
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 4px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ngx-pagination a,
+.ngx-pagination button {
+  cursor: pointer;
+  display: flex !important;
+}
+.ngx-pagination a {
+  border: 1px solid #84b4a4;
+  margin: 0 2px;
+}
+
+.ngx-pagination .current {
+  background: #acdccc !important;
+  color: #fafafa;
+  cursor: default;
+  border-radius: 4px !important;
+  width: 40px;
+  height: 40px;
+  margin: 0 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pagination */

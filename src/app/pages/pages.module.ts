@@ -16,6 +16,7 @@ import { SecondBannerComponent } from './home/components/second-banner/second-ba
 import { ReviewsHomePageComponent } from './home/components/reviews-home-page/reviews-home-page.component';
 import { AboutHomePageComponent } from './home/components/about-home-page/about-home-page.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const contenders = [
@@ -36,6 +37,7 @@ const modules = [
   UserProfileModule,
   AuthModule,
   InfoModule,
+  NgxPaginationModule
 ];
 
 @NgModule({

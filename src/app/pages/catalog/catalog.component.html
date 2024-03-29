@@ -83,9 +83,25 @@
 
   <div class="products grid grid-cols-3">
     <app-product-card
-      *ngFor="let product of productsToDisplay"
+      *ngFor="
+        let product of productsToDisplay
+          | paginate : { itemsPerPage: 3, currentPage: p, totalItems: total }
+      "
       [product]="product"
     >
     </app-product-card>
+
+    <div class="flex w-full justify-center col-span-3">
+      <pagination-controls
+        class="my-pagination"
+        (pageChange)="pageChangeEvent($event)"
+        [maxSize]="9"
+        [autoHide]="true"
+        [responsive]="true"
+        previousLabel=""
+        nextLabel=""
+
+      ></pagination-controls>
+    </div>
   </div>
 </div>

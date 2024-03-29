@@ -28,12 +28,15 @@ export class CatalogComponent {
     { label: 'За рейтингом', value: 'rugs' },
     { label: 'Новинки', value: 'rugs' },
     { label: 'Хіти', value: 'promotions' },
-  ]
+  ];
 
   formGroup = new FormGroup({
     filterSelect: new FormControl(this.options[0].value),
   });
 
+  users: any;
+  p: number = 1;
+  total: number = 0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -46,6 +49,11 @@ export class CatalogComponent {
 
       this.productsToDisplay = this.getProductsByCategoty(this.category);
     });
+  }
+
+  pageChangeEvent(event: number) {
+    this.p = event;
+    this.productsToDisplay;
   }
 
   getProductsByCategoty(category: string): Product[] {

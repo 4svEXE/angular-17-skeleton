@@ -1,4 +1,5 @@
 .product-card {
+  min-width: 345px;
   padding: 16px;
   background-color: #fff;
   border-radius: 4px;
@@ -26,11 +27,13 @@
   }
 
   .image-box {
+    width: 100%;
     position: relative;
     border-radius: 4px;
     overflow: hidden;
 
     img {
+      width: 100%;
       height: 354px;
     }
 
