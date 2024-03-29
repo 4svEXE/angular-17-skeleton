@@ -54,6 +54,8 @@ ng g c shared/components/validation-errors --skip-tests
 ng g c shared/components/select --skip-tests
 ng g c shared/components/a-button --skip-tests
 
+ng g c shared/components/filter-button --skip-tests
+
 ng g directive core/directives/control-value-accessor --skip-tests
 
 ng g m pages
@@ -79,3 +81,6 @@ ng g c shared\layout\header\components\search --skip-tests
 //  core/guards
 //  core/interfaces
 //  core/variables
+
+
+ng g c shared/components/filter-button --skip-tests

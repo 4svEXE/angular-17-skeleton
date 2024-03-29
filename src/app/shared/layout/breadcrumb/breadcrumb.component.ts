@@ -15,6 +15,11 @@ export class BreadcrumbComponent {
   home: MenuItem | undefined;
   static ROUTE_DATA_BREADCRUMB: any;
 
+  urlLocalise: {[key: string]: string} = {
+    catalog: 'Каталог',
+    rugs: 'Килими',
+  }
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
@@ -54,10 +59,14 @@ export class BreadcrumbComponent {
       child.snapshot.url.map((segment) => {
         segment.path;
 
-        breadcrumbs.push({
-          label: segment.path,
-          routerLink: '/' + segment.path,
-        });
+        if(this.urlLocalise[segment.path]){
+          breadcrumbs.push({
+            label: this.urlLocalise[segment.path],
+            routerLink: '/' + segment.path,
+          });
+        }
+
+
       });
 
       this.createBreadcrumbs(child, routerLink, breadcrumbs);

@@ -9,6 +9,15 @@
 @tailwind components;
 @tailwind utilities;
 
+h2.page-title {
+  font-family: Roboto Flex;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 43.2px;
+  text-align: left;
+  padding: 40px 0;
+}
+
 .custom-carousel {
   position: relative;
   display: block;
@@ -89,11 +98,12 @@
     }
 
     scrollbar-color: transparent;
+
   }
 }
 
 /* Braadcrumbs */
-.p-breadcrumb{
+.p-breadcrumb {
   padding-left: 0px;
 }
 /* Braadcrumbs */

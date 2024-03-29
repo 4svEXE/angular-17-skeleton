@@ -1,11 +1,13 @@
 <div class="product-card flex flex-col">
   <div class="card-top-box mb-2 flex justify-between">
-    <h4 class="produt-group-title">{{ product.groupTitle }}</h4>
-    <div class="discount" *ngIf="product.discount">{{ product.discount }}</div>
+    <h4 class="produt-group-title">{{ product.group }}</h4>
+    <div class="discount" *ngIf="product.rug_discounted_price">
+      {{ product.rug_discounted_price }}грн
+    </div>
   </div>
 
   <div class="image-box mb-2">
-    <img [src]="product.image" alt="" />
+    <img [src]="product.product_image_url" alt="" />
     <div
       class="add-to-fav-box"
       [innerHTML]="safeSvgCodes['heart']"
@@ -14,16 +16,18 @@
     ></div>
   </div>
 
-  <h5 class="short-name">{{ product.shortName }}</h5>
+  <h5 class="short-name">{{ product.name }}</h5>
 
   <div class="prices-box flex justify-end items-center mb-2">
-    <del class="crossed-out-price" *ngIf="product.oldPrice">{{ product.oldPrice }}</del>
-    <div class="current-price ml-2">{{ product.currentPrice }}</div>
+    <del class="crossed-out-price" *ngIf="product.oldPrice">{{
+      product.oldPrice
+    }}</del>
+    <div class="current-price ml-2">{{ product.currentPrice }}грн</div>
   </div>
 
   <app-button
-    [label]="'Перейти до продукту'"
-    [additionalClasses]="'primary px-4 py-3'"
-    [routerLink]="product.routerLink"
+    label="Перейти до продукту"
+    additionalClasses="primary px-4 py-3 w-full"
+    [routerLink]="'product/' + product.id"
   ></app-button>
 </div>

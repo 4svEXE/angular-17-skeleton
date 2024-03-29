@@ -1,10 +1,91 @@
-компонент крихти
-тайтл
-вивід обраних фільтрів + седект сортування
-стікі компонент фільтрів + вивід продуктів з пагінацією
+<!-- компонент крихти -->
+<h2 class="page-title">Дитячі килими Україна щільні</h2>
 
-<ol *ngIf="productsToDisplay">
-  <li *ngFor="let product of productsToDisplay" id="product.description">
-    {{product | json}}
-  </li>
-</ol>
+<div class="filters flex justify-between">
+  <div class="flex">
+    <span class="title flex mr-3">Обрано 10 товарів</span>
+
+    <button class="filter-button reset">скасувати</button>
+
+    <div class="selected-filters flex flex-wrap">
+      <button class="filter-button">
+        <span>скасувати</span>
+        <button
+          class="close-button"
+          [innerHTML]="safeSvgCodes['close']"
+        ></button>
+      </button>
+
+      <button class="filter-button">
+        <span>скасувати</span>
+        <button
+          class="close-button"
+          [innerHTML]="safeSvgCodes['close']"
+        ></button>
+      </button>
+
+      <button class="filter-button">
+        <span>234</span>
+        <button
+          class="close-button"
+          [innerHTML]="safeSvgCodes['close']"
+        ></button>
+      </button>
+
+      <button class="filter-button">
+        <span>скасувати dsf sdfsd f</span>
+        <button
+          class="close-button"
+          [innerHTML]="safeSvgCodes['close']"
+        ></button>
+      </button>
+
+      <button class="filter-button">
+        <span>скаати</span>
+        <button
+          class="close-button"
+          [innerHTML]="safeSvgCodes['close']"
+        ></button>
+      </button>
+
+      <button class="filter-button">
+        <span>скасувати wewed fsdf</span>
+        <button
+          class="close-button"
+          [innerHTML]="safeSvgCodes['close']"
+        ></button>
+      </button>
+    </div>
+  </div>
+
+  <form [formGroup]="formGroup">
+    <div class="flex flex-col h-full items-end">
+      <div class="flex justify-center mb-4">
+        <div class="flex">
+          <app-select
+            class="w-full"
+            selectId="filterSelect"
+            [options]="options"
+            formControlName="filterSelect"
+          />
+        </div>
+      </div>
+
+      <div class="flex justify-center m-4">
+        {{ formGroup.value | json }}
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="flex">
+  <div class="filters">filters</div>
+
+  <div class="products grid grid-cols-3">
+    <app-product-card
+      *ngFor="let product of productsToDisplay"
+      [product]="product"
+    >
+    </app-product-card>
+  </div>
+</div>

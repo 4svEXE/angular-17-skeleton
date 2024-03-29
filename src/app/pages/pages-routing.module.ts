@@ -29,16 +29,10 @@ const routes: Routes = [
   {
     path: 'catalog',
     component: CatalogComponent,
-    data: {
-      breadcrumb: 'Каталог',
-    },
   },
   {
     path: 'catalog/:category',
     component: CatalogComponent,
-    data: {
-      breadcrumb: 'Каталог',
-    },
   },
 ];
 

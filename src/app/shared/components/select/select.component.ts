@@ -5,6 +5,7 @@ import { ControlValueAccessor } from 'src/app/core/directives/control-value-acce
 export interface OptionInterface {
   value: string;
   label: string;
+  selected?: boolean;
 }
 
 @Component({

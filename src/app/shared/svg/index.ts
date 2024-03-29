@@ -24,8 +24,8 @@ export const svgImages: SvgImages = {
   </svg>
   `,
   close:`
-  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 6.11143L18.3886 4.5L12 10.8886L5.61143 4.5L4 6.11143L10.3886 12.5L4 18.8886L5.61143 20.5L12 14.1114L18.3886 20.5L20 18.8886L13.6114 12.5L20 6.11143Z" fill="#1E1E1E"/>
+  <svg viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 6.11143L18.3886 4.5L12 10.8886L5.61143 4.5L4 6.11143L10.3886 12.5L4 18.8886L5.61143 20.5L12 14.1114L18.3886 20.5L20 18.8886L13.6114 12.5L20 6.11143Z" />
   </svg>
   `,
   forum:`

@@ -2,12 +2,17 @@
   <label [for]="selectId" *ngIf="label">{{ label }}</label>
 
   <select [formControl]="control" [id]="selectId">
-    <option *ngFor="let option of options" [value]="option.value">
-      {{ option.label }}
+    <option
+      *ngFor="let option of options"
+      [value]="option.value"
+      [attr.selected]="option.selected"
+    >
+      {{ option.label}}
     </option>
   </select>
 
-  <app-validation-errors *ngIf="control.touched"
+  <app-validation-errors
+    *ngIf="control.touched"
     [customErrorMessages]="customErrorMessages"
     [errors]="control.errors"
   ></app-validation-errors>
