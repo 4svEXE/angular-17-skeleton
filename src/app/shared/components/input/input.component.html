@@ -8,6 +8,7 @@
     [class.hasError]="control.errors && control.touched"
     [placeholder]="paceholder"
     [value]="value"
+    [pattern]="pattern"
   />
 
   <app-validation-errors *ngIf="control.touched"

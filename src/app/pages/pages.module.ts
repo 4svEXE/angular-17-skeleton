@@ -18,6 +18,7 @@ import { AboutHomePageComponent } from './home/components/about-home-page/about-
 import { CatalogComponent } from './catalog/catalog.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductsComponent } from './catalog/components/products/products.component';
+import { FilterByPriceComponent } from './catalog/components/filter-by-price/filter-by-price.component';
 
 
 const contenders = [
@@ -42,7 +43,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders, ProductsComponent],
+  declarations: [contenders, ProductsComponent, FilterByPriceComponent],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })

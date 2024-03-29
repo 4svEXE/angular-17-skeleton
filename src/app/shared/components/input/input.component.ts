@@ -20,6 +20,7 @@ export class InputComponent<T> extends ControlValueAccessor<T> {
   @Input() inputType!: InputType;
   @Input() paceholder = '';
   @Input() label = '';
+  @Input() pattern = '';
   @Input() customErrorMessages: Record<string, string> = {};
   @Input() additionalClasses = '';
   @Input() value: string | number = '';
