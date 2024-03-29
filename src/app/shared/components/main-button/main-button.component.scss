@@ -1,5 +1,5 @@
 .button {
-  height: 47px;
+  height: 46px;
   padding: 10px 24px;
   border-radius: 4px;
   transition: 0.3s;
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
 
-  min-width: 223px;
+  /* min-width: 223px; */
 
   fill: #fafafa;
 
@@ -38,14 +38,14 @@
   }
 
   &.secondary {
-    border: 1px solid #84b4a4;
+    border: 1px solid #737776;
     color: #84b4a4;
     fill: #84b4a4;
     background: none;
 
     &:hover {
-      color: #fafafa;
-      fill: #fafafa;
+      color: #5c8c7c;
+      fill: #5c8c7c;
     }
   }
 

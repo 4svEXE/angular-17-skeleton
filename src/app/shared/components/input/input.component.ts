@@ -21,4 +21,10 @@ export class InputComponent<T> extends ControlValueAccessor<T> {
   @Input() paceholder = '';
   @Input() label = '';
   @Input() customErrorMessages: Record<string, string> = {};
+  @Input() additionalClasses = '';
+  @Input() value: string | number = '';
+
+  get customClasses(): string {
+    return 'form-control ' + this.additionalClasses;
+  }
 }

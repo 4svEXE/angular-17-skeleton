@@ -17,6 +17,7 @@ import { ReviewsHomePageComponent } from './home/components/reviews-home-page/re
 import { AboutHomePageComponent } from './home/components/about-home-page/about-home-page.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ProductsComponent } from './catalog/components/products/products.component';
 
 
 const contenders = [
@@ -41,7 +42,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders],
+  declarations: [contenders, ProductsComponent],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })

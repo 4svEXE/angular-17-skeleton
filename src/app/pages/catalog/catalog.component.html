@@ -79,29 +79,69 @@
 </div>
 
 <div class="flex">
-  <div class="filters">filters</div>
+  <div class="filters-nav-bar flex">
 
-  <div class="products grid grid-cols-3">
-    <app-product-card
-      *ngFor="
-        let product of productsToDisplay
-          | paginate : { itemsPerPage: 3, currentPage: p, totalItems: total }
-      "
-      [product]="product"
-    >
-    </app-product-card>
+    <form [formGroup]="filterByPriceGroup">
+      <div class="by-price flex flex-col">
+        <h4 class="label">Ціна</h4>
 
-    <div class="flex w-full justify-center col-span-3">
-      <pagination-controls
-        class="my-pagination"
-        (pageChange)="pageChangeEvent($event)"
-        [maxSize]="9"
-        [autoHide]="true"
-        [responsive]="true"
-        previousLabel=""
-        nextLabel=""
+        <div class="flex items-center mb-4">
+          <app-input
+            class="w-[84px]"
+            paceholder="0"
+            additionalClasses="secondary"
+            formControlName="minInp"
+            inputId="minInp"
+            [value]="getMinPrice()"
+            (input)="inputPrices()"
+          ></app-input>
 
-      ></pagination-controls>
-    </div>
+          <span class="mx-1">-</span>
+
+          <app-input
+            class="w-[84px] mr-2"
+            [paceholder]="price.max + '' || '20000'"
+            additionalClasses="secondary"
+            formControlName="maxInp"
+            [value]="getMaxPrice()"
+            (input)="inputPrices()"
+          ></app-input>
+
+          <app-button
+            label="OK"
+            additionalClasses="secondary"
+            class="w-[84px]"
+            (buttonClick)="onPriceFiltersSubmit()"
+          ></app-button>
+        </div>
+
+        <div class="flex pr-2">
+          <div class="rangeslider">
+            <input
+              class="min input-ranges"
+              name="range_1"
+              type="range"
+              [min]="price.min"
+              [max]="price.max"
+              step="10"
+              formControlName="min"
+              (change)="updatePrices()"
+            />
+            <input
+              class="max input-ranges"
+              name="range_1"
+              type="range"
+              step="10"
+              [min]="price.min"
+              [max]="price.max"
+              formControlName="max"
+              (change)="updatePrices()"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <app-products [products]="productsToDisplay"></app-products>
   </div>
 </div>

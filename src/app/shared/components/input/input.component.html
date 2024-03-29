@@ -1,4 +1,4 @@
-<div class="form-control" *ngIf="control">
+<div *ngIf="control" [ngClass]="customClasses">
   <label [for]="inputId" *ngIf="label">{{ label }}</label>
 
   <input
@@ -7,6 +7,7 @@
     [formControl]="control"
     [class.hasError]="control.errors && control.touched"
     [placeholder]="paceholder"
+    [value]="value"
   />
 
   <app-validation-errors *ngIf="control.touched"

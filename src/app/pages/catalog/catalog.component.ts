@@ -5,7 +5,7 @@ import { SafeHtml } from '@angular/platform-browser';
 import { SvgService } from 'src/app/core/services/svg.service';
 
 import { Product, Products } from 'src/app/core/variables';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-catalog',
@@ -34,9 +34,14 @@ export class CatalogComponent {
     filterSelect: new FormControl(this.options[0].value),
   });
 
-  users: any;
-  p: number = 1;
-  total: number = 0;
+  // ! filter by price
+  price = {
+    min: 0,
+    max: 20000,
+    minInp: 0,
+    maxInp: 20000,
+  };
+  // ! filter by price
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -51,10 +56,51 @@ export class CatalogComponent {
     });
   }
 
-  pageChangeEvent(event: number) {
-    this.p = event;
-    this.productsToDisplay;
+  // ! filter by price
+
+  filterByPriceGroup = new FormGroup({
+    minInp: new FormControl(),
+    maxInp: new FormControl(),
+    min: new FormControl(this.price.min),
+    max: new FormControl(this.price.max),
+  });
+
+  getMinPrice(): number {
+    return this.filterByPriceGroup.get('min')?.value || this.price.min;
   }
+
+  getMaxPrice() {
+    return this.filterByPriceGroup.get('max')?.value || this.price.max;
+  }
+
+  updatePrices() {
+    if (this.getMinPrice() >= this.getMaxPrice()) {
+      this.filterByPriceGroup.get('min')?.setValue(this.getMaxPrice());
+      this.filterByPriceGroup.get('minInp')?.setValue(this.getMaxPrice());
+
+      this.filterByPriceGroup.get('max')?.setValue(this.getMinPrice());
+      this.filterByPriceGroup.get('maxInp')?.setValue(this.getMinPrice());
+    }
+  }
+
+  inputPrices() {
+    const min = this.filterByPriceGroup.get('minInp')?.value || this.price.min;
+    const max = this.filterByPriceGroup.get('maxInp')?.value || this.price.max;
+
+    this.price.minInp = parseInt(min + '', 10);
+    this.price.maxInp = parseInt(max + '', 10);
+
+    if(this.price.minInp > this.price.maxInp){
+      [this.price.minInp, this.price.maxInp] = [this.price.maxInp, this.price.minInp]
+    }
+  }
+
+  onPriceFiltersSubmit() {
+    this.filterByPriceGroup.get('min')?.setValue(this.price.minInp);
+    this.filterByPriceGroup.get('max')?.setValue(this.price.maxInp);
+  }
+
+  // ! filter by price
 
   getProductsByCategoty(category: string): Product[] {
     if (!category) {

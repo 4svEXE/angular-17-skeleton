@@ -34,4 +34,10 @@
     color: #1e1e1e;
     margin-bottom: 4px;
   }
+
+  &.secondary {
+    input {
+      border: 1px solid #737776
+    }
+  }
 }

@@ -109,31 +109,30 @@ h2.page-title {
 
 /* Pagination */
 .ngx-pagination {
-  /* background: red; */
   display: flex;
-
-  font-family: Roboto Flex;
+  font-family: "Roboto Flex", sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 27px;
   text-align: left;
 
-  .pagination-previous {
+  .pagination-previous,
+  .pagination-next {
+    a {
+      border: none !important;
+    }
+  }
 
+  .pagination-previous {
     &::before {
       content: "" !important;
     }
     a::before {
       content: "❮" !important;
     }
-    a{
-      border: none !important;
-    }
   }
+
   .pagination-next {
-    a{
-      border: none !important;
-    }
     a::after {
       content: "❯" !important;
     }
@@ -144,47 +143,44 @@ h2.page-title {
       }
     }
   }
-}
-.ngx-pagination .pagination-next.disabled:after {
-  content: "" !important;
-  display: inline-block;
-  margin-left: 0.5rem;
-}
-.ngx-pagination a,
-.ngx-pagination button {
-  color: #0a0a0a;
-  display: block;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 4px !important;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ngx-pagination a,
-.ngx-pagination button {
-  cursor: pointer;
-  display: flex !important;
-}
-.ngx-pagination a {
-  border: 1px solid #84b4a4;
-  margin: 0 2px;
-}
+  .pagination-next.disabled:after {
+    content: "" !important;
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
 
-.ngx-pagination .current {
-  background: #acdccc !important;
-  color: #fafafa;
-  cursor: default;
-  border-radius: 4px !important;
-  width: 40px;
-  height: 40px;
-  margin: 0 2px;
+  a,
+  button {
+    color: #0a0a0a;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 4px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  a {
+    border: 1px solid #84b4a4;
+    margin: 0 2px;
+  }
+
+  .current {
+    background: #acdccc !important;
+    color: #fafafa;
+    cursor: default;
+    width: 40px;
+    height: 40px;
+    margin: 0 2px;
+    border-radius: 4px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* Pagination */
