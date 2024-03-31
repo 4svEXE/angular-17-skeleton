@@ -1,10 +1,10 @@
 <div class="tab-bar">
-  <a class="tab-bar-button active" routerLink="/">
+  <a class="tab-bar-button " routerLink="/home" routerLinkActive="active">
     <div [innerHTML]="safeSvgCodes['home']" class="tab-bar-icon"></div>
     <span>Головна</span>
   </a>
 
-  <a class="tab-bar-button">
+  <a class="tab-bar-button" routerLink="/catalog" routerLinkActive="active">
     <div [innerHTML]="safeSvgCodes['catalog']" class="tab-bar-icon"></div>
     <span>Каталог</span>
   </a>

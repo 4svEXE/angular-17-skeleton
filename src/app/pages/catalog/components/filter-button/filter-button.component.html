@@ -1,0 +1,9 @@
+<button [ngClass]="classes">
+  <span>{{ label }}</span>
+  <button
+    *ngIf="isClose"
+    class="close-button"
+    [innerHTML]="safeSvgCodes['close']"
+    (click)="onClose()"
+  ></button>
+</button>

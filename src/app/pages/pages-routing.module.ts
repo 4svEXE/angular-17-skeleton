@@ -8,6 +8,11 @@ import { CatalogComponent } from './catalog/catalog.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   {

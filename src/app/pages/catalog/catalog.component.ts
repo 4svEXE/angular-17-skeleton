@@ -30,10 +30,16 @@ export class CatalogComponent {
     { label: 'Хіти', value: 'promotions' },
   ];
 
+  selectedFilters = [
+    { label: 'Від дешевих до дорогих' },
+    { label: 'Від дорогих до дешевих' },
+    { label: 'За рейтингом' },
+    { label: 'Новинки' },
+  ];
+
   formGroup = new FormGroup({
     filterSelect: new FormControl(this.options[0].value),
   });
-
 
   constructor(
     private activatedRoute: ActivatedRoute,

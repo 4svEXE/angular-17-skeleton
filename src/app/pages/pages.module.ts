@@ -19,6 +19,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductsComponent } from './catalog/components/products/products.component';
 import { FilterByPriceComponent } from './catalog/components/filter-by-price/filter-by-price.component';
+import { FilterButtonComponent } from './catalog/components/filter-button/filter-button.component';
 
 
 const contenders = [
@@ -43,7 +44,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders, ProductsComponent, FilterByPriceComponent],
+  declarations: [contenders, ProductsComponent, FilterByPriceComponent, FilterButtonComponent],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })
