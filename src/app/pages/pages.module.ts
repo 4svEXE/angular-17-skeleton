@@ -20,6 +20,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductsComponent } from './catalog/components/products/products.component';
 import { FilterByPriceComponent } from './catalog/components/filter-by-price/filter-by-price.component';
 import { FilterButtonComponent } from './catalog/components/filter-button/filter-button.component';
+import { FilterOptionComponent } from './catalog/components/filter-option/filter-option.component';
+import { FilterOptionsBoxComponent } from './catalog/components/filter-options-box/filter-options-box.component';
 
 
 const contenders = [
@@ -44,7 +46,7 @@ const modules = [
 ];
 
 @NgModule({
-  declarations: [contenders, ProductsComponent, FilterByPriceComponent, FilterButtonComponent],
+  declarations: [contenders, ProductsComponent, FilterByPriceComponent, FilterButtonComponent, FilterOptionComponent, FilterOptionsBoxComponent],
   imports: [modules, NgxSmartModalModule.forRoot()],
   exports: [modules, contenders],
 })

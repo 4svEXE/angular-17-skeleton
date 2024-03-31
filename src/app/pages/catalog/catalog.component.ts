@@ -37,6 +37,12 @@ export class CatalogComponent {
     { label: 'Новинки' },
   ];
 
+  sizesOptions = [
+    { label: '80x300', count: 9, isChecked: true },
+    { label: '180x300', count: 3, isChecked: false },
+    { label: '380x300', count: 1, isChecked: false },
+  ]
+
   formGroup = new FormGroup({
     filterSelect: new FormControl(this.options[0].value),
   });

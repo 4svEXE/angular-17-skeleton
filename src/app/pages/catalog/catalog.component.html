@@ -44,15 +44,35 @@
   </div>
 
   <!-- Вивід фільтрів і товарів -->
-  <div class="flex md:flex-row flex-col">
+  <div class="flex md:flex-row flex-col relative">
     <!-- Фільтри -->
-    <div class="filters-nav-bar flex">
-      <app-filter-by-price></app-filter-by-price>
+    <div class="flex flex-col">
+      <div class="filters-nav-bar flex flex-col">
+        <app-filter-by-price class="mb-8"></app-filter-by-price>
 
+        <app-filter-options-box
+          label="Розміри, см"
+          [options]="sizesOptions"
+        ></app-filter-options-box>
 
+        <app-filter-options-box
+          label="Висота ворсу, мм"
+          [options]="sizesOptions"
+        ></app-filter-options-box>
+
+        <app-filter-options-box
+          label="Матеріали"
+          [options]="sizesOptions"
+        ></app-filter-options-box>
+
+        <app-filter-options-box
+          label="Бренд (країна)"
+          [options]="sizesOptions"
+        ></app-filter-options-box>
+      </div>
     </div>
 
     <!-- Товари -->
-    <app-products [products]="productsToDisplay"></app-products>
+    <app-products [products]="productsToDisplay"> </app-products>
   </div>
 </div>

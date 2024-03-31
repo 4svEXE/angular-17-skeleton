@@ -1,0 +1,31 @@
+.show-button {
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 12px;
+
+  h4.label {
+    font-family: Roboto Flex;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+  }
+
+  .arrow {
+    transform: rotate(0deg);
+    transition: .2s ease-in-out;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.options {
+  height: 0;
+  overflow: hidden;
+
+  &.active {
+    height: fit-content;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="flex flex-col" *ngIf="options">
+  <div class="flex show-button" (click)="toggleShowOptions()">
+    <h4 class="label">{{ label }}</h4>
+    <div
+      [innerHTML]="safeSvgCodes['arrow']"
+      [class.active]="isShowOptions"
+      class="arrow"
+    ></div>
+  </div>
+
+  <div class="options flex flex-col mb-10" [class.active]="isShowOptions">
+    <app-filter-option
+      *ngFor="let option of options"
+      [label]="option.label"
+      [isChecked]="option.isChecked"
+      [count]="option.count"
+      [id]="option.label"
+    ></app-filter-option>
+  </div>
+</div>

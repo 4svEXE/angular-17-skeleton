@@ -1,0 +1,9 @@
+<label class="option flex mb-4" for="{{id}}" *ngIf="label">
+  <input type="checkbox" id="{{id}}" [checked]="isChecked ? true : null" />
+
+  <div class="checkbox"></div>
+
+  <span class="label">{{ label }}</span>
+
+  <div class="count">{{ count }}</div>
+</label>
