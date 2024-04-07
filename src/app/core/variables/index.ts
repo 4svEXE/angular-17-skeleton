@@ -122,7 +122,7 @@ export const Products: Product[] = [
     quantity_in_stock: 10,
     popularity_rating: 4.5,
     features: ['Функція 1', 'Функція 2'],
-    product_image_url: 'url_to_image.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 5 },
       { size: 'Великий', quantity_in_stock: 5 },
@@ -150,7 +150,7 @@ export const Products: Product[] = [
     quantity_in_stock: 8,
     popularity_rating: 4.2,
     features: ['Функція 3', 'Функція 4'],
-    product_image_url: 'url_to_image2.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 4 },
       { size: 'Великий', quantity_in_stock: 4 },
@@ -178,7 +178,7 @@ export const Products: Product[] = [
     quantity_in_stock: 12,
     popularity_rating: 4.7,
     features: ['Функція 5', 'Функція 6'],
-    product_image_url: 'url_to_image3.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 6 },
       { size: 'Великий', quantity_in_stock: 6 },
@@ -206,7 +206,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
@@ -234,7 +234,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
@@ -262,7 +262,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
@@ -290,7 +290,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
@@ -318,7 +318,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
@@ -346,7 +346,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
@@ -374,7 +374,7 @@ export const Products: Product[] = [
     quantity_in_stock: 15,
     popularity_rating: 4.4,
     features: ['Функція 7', 'Функція 8'],
-    product_image_url: 'url_to_image4.jpg',
+    product_image_url: 'https://orner.com.ua/storage/editor/fotos/51ec164cc8ca94e135fc2bf0d0c8d53b_1699969740.jpg',
     sizes: [
       { size: 'Маленький', quantity_in_stock: 7 },
       { size: 'Великий', quantity_in_stock: 8 },
