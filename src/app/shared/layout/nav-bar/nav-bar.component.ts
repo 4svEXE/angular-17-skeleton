@@ -4,7 +4,7 @@ import { LinkInterface } from 'src/app/core/variables/header';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss', './test.scss']
 })
 export class NavBarComponent {
   @Input() links!: LinkInterface[];
