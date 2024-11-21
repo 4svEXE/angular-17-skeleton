@@ -24,6 +24,6 @@ export class AppComponent {
 
   onLogout() {
     this.authService.logOut();
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 }
